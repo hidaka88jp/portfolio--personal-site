@@ -24,6 +24,7 @@ export default function Home() {
             Save and see your changes instantly.
           </li>
           <li className='font-bold text-red-50'>test</li>
+          <li>Try again</li>
         </ol>
 
         <div className='flex flex-col items-center gap-4 sm:flex-row'>
