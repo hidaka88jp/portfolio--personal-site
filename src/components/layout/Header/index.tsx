@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <header>
-      <p>Header</p>
+      <p className='text-center'>Header</p>
     </header>
   );
 }
