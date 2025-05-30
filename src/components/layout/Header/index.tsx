@@ -1,5 +1,8 @@
+'use client';
+
 import { Antonio } from 'next/font/google';
 import Link from 'next/link';
+import Navigation from '../Navigation';
 
 const antonio = Antonio({
   subsets: ['latin'],
@@ -8,7 +11,7 @@ const antonio = Antonio({
 export default function Header() {
   return (
     <header className='px-4 pt-4 pb-5 sm:px-8 sm:pt-9 sm:pb-7'>
-      <div className='mx-auto flex w-full max-w-80 items-baseline justify-between sm:max-w-5xl'>
+      <div className='mx-auto flex w-full max-w-80 items-center justify-between sm:max-w-5xl sm:items-baseline'>
         <Link href={'/'}>
           <h1
             className={`${antonio.className} text-2xl tracking-[.18em]`}
@@ -18,7 +21,7 @@ export default function Header() {
             <span className='text-accent'>H</span>IDIKA
           </h1>
         </Link>
-        <p>Nav</p>
+        <Navigation />
       </div>
     </header>
   );
