@@ -27,23 +27,28 @@ export default function Navigation() {
       </button>
 
       {isOpen && (
-        <nav
-          className={clsx(
-            'fixed inset-0 z-10 flex flex-col items-center justify-center bg-gray-700 text-white transition-transform duration-300 ease-in-out',
-            isOpen ? 'translate-x-0' : 'translate-x-full'
-          )}
-        >
-          <a href='#notes' className='mb-4 text-2xl'>
-            Notes
-          </a>
-          <a href='#works' className='mb-4 text-2xl'>
-            Works
-          </a>
-          <a href='#contact' className='text-2xl'>
-            Contact
-          </a>
-        </nav>
+        <div
+          className='pt-safe px-safe fixed inset-0 z-0 bg-black/30'
+          onClick={() => setIsOpen(false)}
+        />
       )}
+
+      <nav
+        className={clsx(
+          'bg-gray pt-safe px-safe fixed inset-y-0 right-0 z-10 flex w-64 flex-col items-center justify-start text-white transition-transform duration-300 ease-in-out',
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        )}
+      >
+        <a href='#notes' className='mb-4 pt-24 text-xl'>
+          About
+        </a>
+        <a href='#works' className='mb-4 text-xl'>
+          Works
+        </a>
+        <a href='#contact' className='text-xl'>
+          Notes
+        </a>
+      </nav>
     </>
   );
 }
