@@ -7,6 +7,7 @@ import Footer from '@/components/layout/Footer';
 export const metadata: Metadata = {
   title: 'TAKANORI HIDAKA',
   description: "Showcasing my projects and things I've learned",
+  viewport: 'width=device-width, initial-scale=1, viewport-fit=cover',
 };
 
 const inter = Inter({
