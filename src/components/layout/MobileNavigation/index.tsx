@@ -6,7 +6,11 @@ import { MdArrowForward } from 'react-icons/md';
 import { FaLinkedin } from 'react-icons/fa6';
 import { FaSquareXTwitter } from 'react-icons/fa6';
 
-export default function Navigation() {
+type Props = {
+  className: string;
+};
+
+export default function MobileNavigation({ className }: Props) {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -17,9 +21,9 @@ export default function Navigation() {
   }, [isOpen]);
 
   return (
-    <>
+    <div className={className}>
       <button
-        className='relative block sm:hidden'
+        className='relative block'
         onClick={() => setIsOpen(!isOpen)}
         aria-label='Open menu'
       >
@@ -74,6 +78,6 @@ export default function Navigation() {
           </a>
         </div>
       </nav>
-    </>
+    </div>
   );
 }

@@ -21,7 +21,7 @@ export default function Header() {
             <span className='text-accent'>H</span>IDIKA
           </h1>
         </Link>
-        <MobileNavigation />
+        <MobileNavigation className='sm:hidden' />
       </div>
     </header>
   );
