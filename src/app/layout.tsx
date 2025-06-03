@@ -24,7 +24,7 @@ export default function RootLayout({
       <head>
         <meta name='theme-color' content='#ffffff' />
       </head>
-      <body>
+      <body className='text-gray'>
         <Header />
         <main>{children}</main>
         <Footer />
