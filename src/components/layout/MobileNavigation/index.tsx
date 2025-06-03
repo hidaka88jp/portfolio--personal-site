@@ -61,20 +61,24 @@ export default function MobileNavigation({ className }: Props) {
           <a href='#notes'>Notes</a>
         </div>
         <div className='mt-6 h-px w-8 bg-white' />
-        <div className='mt-6 flex items-center justify-center space-x-4 fill-white'>
+        <div className='mt-6 flex flex-col items-center justify-center space-y-4'>
           <a
             href='https://ca.linkedin.com/in/takanori-hidaka-102568177'
             target='_blank'
             rel='noopener noreferrer'
+            className='flex items-center'
           >
-            <FaLinkedin size={30} />
+            <FaLinkedin className='mr-1' />
+            LinkedIn
           </a>
           <a
             href='https://x.com/taka_hidaka_log'
             target='_blank'
             rel='noopener noreferrer'
+            className='flex items-center'
           >
-            <FaSquareXTwitter size={30} />
+            <FaSquareXTwitter className='mr-1' />
+            Twitter / X
           </a>
         </div>
       </nav>
