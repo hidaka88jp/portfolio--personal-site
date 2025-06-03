@@ -11,10 +11,10 @@ const antonio = Antonio({
 export default function Header() {
   return (
     <header className='px-4 pt-4 pb-5 sm:px-8 sm:pt-9 sm:pb-7'>
-      <div className='mx-auto flex w-full max-w-80 items-center justify-between sm:max-w-5xl sm:items-baseline'>
+      <div className='mx-auto flex w-full max-w-90 items-center justify-between sm:max-w-5xl sm:items-baseline'>
         <Link href={'/'}>
           <h1
-            className={`${antonio.className} text-2xl tracking-[.18em]`}
+            className={`${antonio.className} text-3xl tracking-[.18em]`}
             aria-label='Takanori Hidaka'
           >
             <span className='text-accent'>T</span>AKANORI{' '}
