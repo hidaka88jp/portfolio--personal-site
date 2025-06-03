@@ -58,10 +58,18 @@ export default function Navigation() {
         </div>
         <div className='mt-6 h-px w-8 bg-white' />
         <div className='mt-6 flex items-center justify-center space-x-4 fill-white'>
-          <a href='https://ca.linkedin.com/in/takanori-hidaka-102568177'>
+          <a
+            href='https://ca.linkedin.com/in/takanori-hidaka-102568177'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <FaLinkedin size={30} />
           </a>
-          <a href='https://x.com/taka_hidaka_log'>
+          <a
+            href='https://x.com/taka_hidaka_log'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <FaSquareXTwitter size={30} />
           </a>
         </div>
