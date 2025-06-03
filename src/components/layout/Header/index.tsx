@@ -2,7 +2,7 @@
 
 import { Antonio } from 'next/font/google';
 import Link from 'next/link';
-import Navigation from '../Navigation';
+import Navigation from '../MobileNavigation';
 
 const antonio = Antonio({
   subsets: ['latin'],
