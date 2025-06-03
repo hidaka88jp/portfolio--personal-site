@@ -2,7 +2,7 @@
 
 import { Antonio } from 'next/font/google';
 import Link from 'next/link';
-import Navigation from '../MobileNavigation';
+import MobileNavigation from '../MobileNavigation';
 
 const antonio = Antonio({
   subsets: ['latin'],
@@ -21,7 +21,7 @@ export default function Header() {
             <span className='text-accent'>H</span>IDIKA
           </h1>
         </Link>
-        <Navigation />
+        <MobileNavigation />
       </div>
     </header>
   );
