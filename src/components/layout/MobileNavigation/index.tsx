@@ -37,6 +37,7 @@ export default function MobileNavigation({ className }: Props) {
 
       {isOpen && (
         <div
+          data-testid='overlay'
           className='fixed inset-0 bg-black/30'
           onClick={() => setIsOpen(false)}
         />
