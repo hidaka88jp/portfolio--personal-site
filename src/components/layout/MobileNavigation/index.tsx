@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import { MdArrowForward } from 'react-icons/md';
-import { FaLinkedin } from 'react-icons/fa6';
-import { FaSquareXTwitter } from 'react-icons/fa6';
+import { NAV_LINKS } from '@/constants/navigation';
+import { SOCIAL_LINKS } from '@/constants/navigation';
 
 type Props = {
   className: string;
@@ -57,30 +57,26 @@ export default function MobileNavigation({ className }: Props) {
           <MdArrowForward size={24} className='fill-white' />
         </button>
         <div className='flex flex-col items-center space-y-4 pt-24'>
-          <a href='#about'>About</a>
-          <a href='#works'>Works</a>
-          <a href='#notes'>Notes</a>
+          {NAV_LINKS.map(({ href, label }) => (
+            <a key={href} href={href}>
+              {label}
+            </a>
+          ))}
         </div>
         <div className='mt-6 h-px w-8 bg-white' />
         <div className='mt-6 flex flex-col items-center justify-center space-y-4'>
-          <a
-            href='https://ca.linkedin.com/in/takanori-hidaka-102568177'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='flex items-center'
-          >
-            <FaLinkedin className='mr-1' />
-            LinkedIn
-          </a>
-          <a
-            href='https://x.com/taka_hidaka_log'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='flex items-center'
-          >
-            <FaSquareXTwitter className='mr-1' />
-            Twitter / X
-          </a>
+          {SOCIAL_LINKS.map(({ href, label, icon: Icon }) => (
+            <a
+              href={href}
+              key={href}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='flex items-center'
+            >
+              <Icon className='mr-1' />
+              {label}
+            </a>
+          ))}
         </div>
       </nav>
     </div>
