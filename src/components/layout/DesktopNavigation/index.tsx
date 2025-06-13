@@ -7,7 +7,7 @@ type Props = {
 
 export default function DesktopNavigation({ className }: Props) {
   return (
-    <nav className={`${className} items-center space-x-6`}>
+    <nav className={`${className} flex items-center space-x-6`}>
       <ul className='flex space-x-9'>
         {NAV_LINKS.map(({ href, label }) => (
           <li key={href}>
