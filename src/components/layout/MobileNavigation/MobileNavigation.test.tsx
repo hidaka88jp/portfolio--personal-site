@@ -1,6 +1,11 @@
+jest.mock('@/lib/themeColor', () => ({
+  setThemeColor: jest.fn(),
+}));
+
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import MobileNavigation from './index';
+import { setThemeColor } from '@/lib/themeColor';
 
 describe('MobileNavigation', () => {
   it('renders with provided className', () => {
@@ -44,5 +49,16 @@ describe('MobileNavigation', () => {
     expect(screen.getByText('Notes')).toBeInTheDocument();
     expect(screen.getByText('LinkedIn')).toBeInTheDocument();
     expect(screen.getByText('Twitter / X')).toBeInTheDocument();
+  });
+
+  it('calls setThemeColor on open and close', async () => {
+    const user = userEvent.setup();
+    render(<MobileNavigation className='' />);
+
+    await user.click(screen.getByLabelText('Open menu'));
+    expect(setThemeColor).toHaveBeenCalledWith('#434343');
+
+    await user.click(screen.getByTestId('overlay'));
+    expect(setThemeColor).toHaveBeenCalledWith('#ffffff');
   });
 });
