@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { MdArrowForward } from 'react-icons/md';
 import { NAV_LINKS } from '@/constants/navigation';
 import { SOCIAL_LINKS } from '@/constants/navigation';
+import { setThemeColor } from '@/lib/themeColor';
 
 type Props = {
   className: string;
@@ -14,10 +15,7 @@ export default function MobileNavigation({ className }: Props) {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) {
-      meta.setAttribute('content', isOpen ? '#434343' : '#ffffff');
-    }
+    setThemeColor(isOpen ? '#434343' : '#ffffff');
   }, [isOpen]);
 
   return (
