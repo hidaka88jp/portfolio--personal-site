@@ -7,5 +7,7 @@
 @theme {
   --color-accent: #84C49C;
   --color-gray: #434343;
+
+  --font-inconsolata: var(--font-inconsolata);
 }
 
