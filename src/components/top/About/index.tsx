@@ -19,7 +19,7 @@ export default function About() {
           />
           <div className='w-full sm:order-1'>
             <div className='mb-4 flex flex-col items-center sm:items-start'>
-              <h3 className='font-inconsolata mb-1 text-xl font-medium'>
+              <h3 className='font-inconsolata mb-1 text-xl font-medium sm:font-normal'>
                 Who I am
               </h3>
               <div className='bg-accent h-0.5 w-8' />
@@ -38,7 +38,7 @@ export default function About() {
               learning new skills.
             </p>
             <div className='mb-4 flex flex-col items-center sm:items-start'>
-              <h3 className='font-inconsolata mb-1 text-xl font-medium'>
+              <h3 className='font-inconsolata mb-1 text-xl font-medium sm:font-normal'>
                 Skills
               </h3>
               <div className='bg-accent h-0.5 w-8' />
