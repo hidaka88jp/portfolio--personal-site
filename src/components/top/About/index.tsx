@@ -19,7 +19,9 @@ export default function About() {
           />
           <div className='w-full sm:order-1'>
             <div className='mb-4 flex flex-col items-center sm:items-start'>
-              <h3 className='font-inconsolata mb-1 text-xl'>Who I am</h3>
+              <h3 className='font-inconsolata mb-1 text-xl font-medium'>
+                Who I am
+              </h3>
               <div className='bg-accent h-0.5 w-8' />
             </div>
             <p className='mb-7 sm:mb-9'>
@@ -36,10 +38,12 @@ export default function About() {
               learning new skills.
             </p>
             <div className='mb-4 flex flex-col items-center sm:items-start'>
-              <h3 className='font-inconsolata mb-1 text-xl'>Skills</h3>
+              <h3 className='font-inconsolata mb-1 text-xl font-medium'>
+                Skills
+              </h3>
               <div className='bg-accent h-0.5 w-8' />
             </div>
-            <div className='flex flex-wrap gap-2'>
+            <div className='flex flex-wrap gap-2 sm:gap-3'>
               {TECH_STACKS.map((techStack) => (
                 <TechStackBadge
                   key={techStack.id}
