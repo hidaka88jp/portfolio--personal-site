@@ -1,5 +1,8 @@
-import TopSectionTitle from '@/components/shared/TopSectionTitle';
 import Image from 'next/image';
+import { TECH_STACKS } from '@/constants/techStacks';
+
+import TopSectionTitle from '@/components/shared/TopSectionTitle';
+import TechStackBadge from '@/components/shared/TechStackBadge';
 
 export default function About() {
   return (
@@ -35,6 +38,16 @@ export default function About() {
             <div className='mb-4 flex flex-col items-center sm:items-start'>
               <h3 className='font-inconsolata mb-1 text-xl'>Skills</h3>
               <div className='bg-accent h-0.5 w-8' />
+            </div>
+            <div className='flex flex-wrap gap-2'>
+              {TECH_STACKS.map((techStack) => (
+                <TechStackBadge
+                  key={techStack.id}
+                  name={techStack.name}
+                  Icon={techStack.Icon}
+                  color={techStack.color}
+                />
+              ))}
             </div>
           </div>
         </div>
