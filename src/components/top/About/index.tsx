@@ -43,7 +43,7 @@ export default function About() {
               </h3>
               <div className='bg-accent h-0.5 w-8' />
             </div>
-            <div className='flex flex-wrap gap-2 sm:gap-3'>
+            <div className='flex flex-wrap gap-2 sm:gap-2.5'>
               {TECH_STACKS.map((techStack) => (
                 <TechStackBadge
                   key={techStack.id}
