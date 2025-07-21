@@ -14,7 +14,29 @@ export default function About() {
             height={3780}
             className='aspect-square w-full object-cover object-bottom sm:order-2 sm:aspect-auto'
           />
-          <div className='h-[300px] w-full bg-amber-500 sm:order-1'></div>
+          <div className='w-full sm:order-1'>
+            <div className='mb-4 flex flex-col items-center sm:items-start'>
+              <h3 className='font-inconsolata mb-1 text-xl'>Who I am</h3>
+              <div className='bg-accent h-0.5 w-8' />
+            </div>
+            <p className='mb-7 sm:mb-9'>
+              Hi, I&apos;m Taka. I’m a self-taught web developer, currently
+              focusing on frontend.
+              <br />
+              <br />
+              After spending time reflecting on the right path for me, I’ve
+              chosen to pursue web development seriously. I’ve built several
+              portfolio projects and experimented with various technologies.
+              <br />
+              <br />
+              I’m committed to growing in this field long-term and am always
+              learning new skills.
+            </p>
+            <div className='mb-4 flex flex-col items-center sm:items-start'>
+              <h3 className='font-inconsolata mb-1 text-xl'>Skills</h3>
+              <div className='bg-accent h-0.5 w-8' />
+            </div>
+          </div>
         </div>
       </div>
     </section>
