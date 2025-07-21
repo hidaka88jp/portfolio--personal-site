@@ -27,7 +27,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' className={clsx(inter.variable, inconsolata.variable)}>
+    <html
+      lang='en'
+      className={clsx(inter.variable, inconsolata.variable, 'scroll-smooth')}
+    >
       <head>
         <meta name='theme-color' content='#ffffff' />
       </head>
