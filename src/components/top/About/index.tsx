@@ -19,28 +19,22 @@ export default function About() {
           />
           <div className='w-full sm:order-1'>
             <div className='mb-4 flex flex-col items-center sm:items-start'>
-              <h3 className='font-inconsolata mb-1 text-xl font-medium sm:font-normal'>
-                Who I am
-              </h3>
+              <h3 className='font-inconsolata mb-1 text-xl font-medium sm:font-normal'>Who I am</h3>
               <div className='bg-accent h-0.5 w-8' />
             </div>
             <p className='mb-7 sm:mb-9'>
-              Hi, I&apos;m Taka. I’m a self-taught web developer, currently
-              focusing on frontend.
+              Hi, I&apos;m Taka. I’m a self-taught web developer, currently focusing on frontend.
               <br />
               <br />
-              After spending time reflecting on the right path for me, I’ve
-              chosen to pursue web development seriously. I’ve built several
-              portfolio projects and experimented with various technologies.
+              After spending time reflecting on the right path for me, I’ve chosen to pursue web
+              development seriously. I’ve built several portfolio projects and experimented with
+              various technologies.
               <br />
               <br />
-              I’m committed to growing in this field long-term and am always
-              learning new skills.
+              I’m committed to growing in this field long-term and am always learning new skills.
             </p>
             <div className='mb-4 flex flex-col items-center sm:items-start'>
-              <h3 className='font-inconsolata mb-1 text-xl font-medium sm:font-normal'>
-                Skills
-              </h3>
+              <h3 className='font-inconsolata mb-1 text-xl font-medium sm:font-normal'>Skills</h3>
               <div className='bg-accent h-0.5 w-8' />
             </div>
             <div className='flex flex-wrap gap-2 sm:gap-2.5'>
