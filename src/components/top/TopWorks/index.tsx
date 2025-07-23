@@ -8,7 +8,7 @@ export default async function TopWorks() {
   const works = await getWorksList({ limit: WORKS_LIST_LIMIT });
 
   return (
-    <section id='works' className='px-4 pb-16 sm:px-8 sm:pb-20'>
+    <section id='works' className='px-4 pb-16 sm:px-8 sm:pb-28'>
       <div className='mx-auto w-full max-w-94 sm:max-w-5xl'>
         <TopSectionTitle title='Works' subTitle="What I've built" />
         <div className='grid grid-cols-1 gap-9 sm:grid-cols-2 xl:grid-cols-3 xl:gap-8'>

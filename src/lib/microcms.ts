@@ -9,6 +9,13 @@ export type Works = {
   thumbnail: MicroCMSImage;
 } & MicroCMSListContent;
 
+export type Notes = {
+  title: string;
+  techStack: string[];
+  content: string;
+  thumbnail: MicroCMSImage;
+} & MicroCMSListContent;
+
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error('MICROCMS_SERVICE_DOMAIN is required');
 }
@@ -25,6 +32,14 @@ const client = createClient({
 export const getWorksList = async (queries?: MicroCMSQueries) => {
   const listData = await client.getList<Works>({
     endpoint: 'works',
+    queries,
+  });
+  return listData;
+};
+
+export const getNotesList = async (queries?: MicroCMSQueries) => {
+  const listData = await client.getList<Notes>({
+    endpoint: 'notes',
     queries,
   });
   return listData;
