@@ -20,17 +20,8 @@ export default function MobileNavigation({ className }: Props) {
 
   return (
     <div className={className}>
-      <button
-        className='relative block'
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label='Open menu'
-      >
-        <Image
-          src='/ui/menu-icon.svg'
-          alt='menu-icon'
-          width={23.93}
-          height={16.94}
-        />
+      <button className='relative block' onClick={() => setIsOpen(!isOpen)} aria-label='Open menu'>
+        <Image src='/ui/menu-icon.svg' alt='menu-icon' width={23.93} height={16.94} />
       </button>
 
       {isOpen && (

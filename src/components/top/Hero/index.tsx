@@ -14,7 +14,7 @@ export default function Hero() {
         <div className='relative mx-auto w-full max-w-90 px-5 py-7 sm:max-w-5xl sm:px-0 sm:py-14'>
           <div className='absolute bottom-1 left-[-80px] h-48 w-[150%] origin-bottom-left rotate-[-8deg] bg-black opacity-60 sm:left-[-230px] sm:h-80 sm:origin-bottom-left sm:translate-y-[-400px] sm:rotate-[60deg]' />
           <pre className='font-inconsolata relative z-10 text-2xl font-light text-white sm:text-3xl'>
-            {`while (code){
+            {`while (code) {
   learn();
   create();
   drinkCoffee();

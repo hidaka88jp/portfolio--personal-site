@@ -18,8 +18,8 @@ export default function Header() {
             className={`${antonio.className} text-2xl tracking-[.18em] sm:text-4xl`}
             aria-label='Takanori Hidaka'
           >
-            <span className='text-accent'>T</span>AKANORI{' '}
-            <span className='text-accent'>H</span>IDIKA
+            <span className='text-accent'>T</span>AKANORI <span className='text-accent'>H</span>
+            IDIKA
           </h1>
         </Link>
         <MobileNavigation className='z-20 sm:hidden' />

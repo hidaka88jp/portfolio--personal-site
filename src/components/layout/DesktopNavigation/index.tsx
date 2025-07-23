@@ -7,10 +7,7 @@ type Props = {
 
 export default function DesktopNavigation({ className }: Props) {
   return (
-    <nav
-      data-testid='desktop-nav'
-      className={`${className} flex items-center space-x-6`}
-    >
+    <nav data-testid='desktop-nav' className={`${className} flex items-center space-x-6`}>
       <ul className='flex space-x-9'>
         {NAV_LINKS.map(({ href, label }) => (
           <li key={href}>
@@ -24,12 +21,7 @@ export default function DesktopNavigation({ className }: Props) {
       <ul className='flex space-x-9'>
         {SOCIAL_LINKS.map(({ href, label }) => (
           <li key={href}>
-            <a
-              href={href}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='hover:text-accent'
-            >
+            <a href={href} target='_blank' rel='noopener noreferrer' className='hover:text-accent'>
               {label}
             </a>
           </li>
