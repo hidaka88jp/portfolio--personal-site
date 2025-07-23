@@ -79,7 +79,7 @@ export const TECH_STACKS: TechStack[] = [
   },
   {
     id: 'tailwindcss',
-    name: 'Tailiwind CSS',
+    name: 'Tailwind CSS',
     Icon: SiTailwindcss,
     color: '#06B6D4',
   },
