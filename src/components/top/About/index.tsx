@@ -6,7 +6,7 @@ import TechStackBadge from '@/components/shared/TechStackBadge';
 
 export default function About() {
   return (
-    <section id='about' className='px-4 pb-16 sm:px-8 sm:pb-20'>
+    <section id='about' className='px-4 pb-16 sm:px-8 sm:pb-28'>
       <div className='mx-auto w-full max-w-94 sm:max-w-5xl'>
         <TopSectionTitle title='About' subTitle='Introduce Myself' />
         <div className='grid gap-7 sm:grid-cols-2 sm:gap-10'>
