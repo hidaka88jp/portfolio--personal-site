@@ -11,7 +11,7 @@ export default async function TopNotes() {
 
   return (
     <div>
-      <section id='notes' className='px-4 pb-16 sm:px-8 sm:pb-20'>
+      <section id='notes' className='px-4 pb-24 sm:px-8 sm:pb-28'>
         <div className='mx-auto w-full max-w-94 sm:max-w-5xl'>
           <TopSectionTitle title='Notes' subTitle="What I've learned" />
           <div className='grid grid-cols-1 gap-9 pb-10 sm:grid-cols-2 xl:grid-cols-3 xl:gap-8'>
