@@ -6,7 +6,8 @@ export default function Footer() {
     <footer>
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className='flex w-full cursor-pointer flex-col items-center justify-center bg-gray-200 py-1.5'
+        aria-label='Back to top'
+        className='flex w-full cursor-pointer flex-col items-center justify-center bg-gray-200 py-1.5 hover:bg-gray-300'
       >
         <IoIosArrowUp />
         <p>Back to Top</p>
