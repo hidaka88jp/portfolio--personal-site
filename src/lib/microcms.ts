@@ -44,3 +44,16 @@ export const getNotesList = async (queries?: MicroCMSQueries) => {
   });
   return listData;
 };
+
+export async function getWorkDetail(contentId: string) {
+  try {
+    const workDetail = await client.get<Works>({
+      endpoint: 'works',
+      contentId,
+    });
+    return workDetail;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}

@@ -15,6 +15,7 @@ export default async function TopWorks() {
           {works.contents.map((work) => (
             <WorksCard
               key={work.id}
+              id={work.id}
               title={work.title}
               thumbnail={work.thumbnail}
               category={work.category}

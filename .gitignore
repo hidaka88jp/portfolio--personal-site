@@ -42,3 +42,6 @@ next-env.d.ts
 
 # screenshots
 /screenshots
+
+# html editor
+html-editor.html
