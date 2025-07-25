@@ -3,6 +3,7 @@ import WorksCard from '@/components/shared/WorksCard';
 import '@testing-library/jest-dom';
 
 const mockProps = {
+  id: '1',
   title: 'My Test Project',
   category: 'Portfolio',
   thumbnail: {
