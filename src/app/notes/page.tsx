@@ -1,6 +1,11 @@
+import { getTechStacks } from '@/lib/microcms';
+import { getTechStack } from '@/lib/getTechStack';
 import Image from 'next/image';
+import TechStackBadge from '@/components/shared/TechStackBadge';
 
-export default function NotesPage() {
+export default async function NotesPage() {
+  const techStacks = await getTechStacks();
+
   return (
     <>
       <section className='relative mb-12 w-full sm:mb-20 sm:h-96'>
@@ -29,7 +34,27 @@ export default function NotesPage() {
           <div className='mx-auto w-full max-w-94 sm:max-w-5xl'>
             <div className='grid grid-cols-1 gap-5 sm:grid-cols-4'>
               <div className='bg-amber-900 sm:order-2 sm:col-span-3'></div>
-              <div className='sm:order-1 sm:col-span-1'></div>
+              <div className='sm:order-1 sm:col-span-1'>
+                <ul className='flex gap-3 sm:flex-col'>
+                  <li className='border-gray flex w-fit cursor-pointer items-center rounded-md border px-2 py-1'>
+                    ALL
+                  </li>
+                  {techStacks.contents.map((apiStack) => {
+                    const localStack = getTechStack(apiStack.name);
+                    if (!localStack) return null;
+
+                    return (
+                      <li key={localStack.id} className='w-fit cursor-pointer'>
+                        <TechStackBadge
+                          name={localStack.name}
+                          Icon={localStack.Icon}
+                          color={localStack.color}
+                        />
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
