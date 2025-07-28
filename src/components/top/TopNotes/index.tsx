@@ -20,7 +20,7 @@ export default async function TopNotes() {
                 key={note.id}
                 title={note.title}
                 thumbnail={note.thumbnail}
-                techStack={note.techStack}
+                techStacks={note.techStack}
               />
             ))}
           </div>

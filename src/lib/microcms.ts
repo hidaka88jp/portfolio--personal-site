@@ -1,6 +1,11 @@
 import { createClient } from 'microcms-js-sdk';
 import type { MicroCMSQueries, MicroCMSImage, MicroCMSListContent } from 'microcms-js-sdk';
 
+export type TechStack = {
+  id: string;
+  name: string;
+};
+
 export type Works = {
   title: string;
   category: string;
@@ -11,7 +16,7 @@ export type Works = {
 
 export type Notes = {
   title: string;
-  techStack: string[];
+  techStack: TechStack[];
   content: string;
   thumbnail: MicroCMSImage;
 } & MicroCMSListContent;
