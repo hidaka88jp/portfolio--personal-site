@@ -42,14 +42,6 @@ export const getWorksList = async (queries?: MicroCMSQueries) => {
   return listData;
 };
 
-export const getNotesList = async (queries?: MicroCMSQueries) => {
-  const listData = await client.getList<Notes>({
-    endpoint: 'notes',
-    queries,
-  });
-  return listData;
-};
-
 export async function getWorkDetail(contentId: string) {
   try {
     const workDetail = await client.get<Works>({
@@ -62,3 +54,18 @@ export async function getWorkDetail(contentId: string) {
     return null;
   }
 }
+export const getNotesList = async (queries?: MicroCMSQueries) => {
+  const listData = await client.getList<Notes>({
+    endpoint: 'notes',
+    queries,
+  });
+  return listData;
+};
+
+export const getTechStacks = async () => {
+  const listData = await client.getList<TechStack>({
+    endpoint: 'tech-stacks',
+    queries: { limit: 100 },
+  });
+  return listData;
+};
