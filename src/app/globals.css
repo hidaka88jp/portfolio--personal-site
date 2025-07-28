@@ -151,7 +151,7 @@
   }
 
   .article .sub-title {
-    @apply font-inconsolata mb-4 text-xl pb-1 relative;
+    @apply font-inconsolata mb-4 text-xl pb-1.5 relative;
   }
 
   .article .sub-title::after {
