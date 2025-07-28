@@ -35,7 +35,7 @@ export default async function NotesPage() {
             <div className='grid grid-cols-1 gap-5 sm:grid-cols-4'>
               <div className='bg-amber-900 sm:order-2 sm:col-span-3'></div>
               <div className='sm:order-1 sm:col-span-1'>
-                <ul className='flex gap-3 sm:flex-col'>
+                <ul className='flex flex-wrap gap-3 sm:flex-col'>
                   <li className='border-gray flex w-fit cursor-pointer items-center rounded-md border px-2 py-1'>
                     ALL
                   </li>
