@@ -1,3 +1,5 @@
+'use client';
+
 import { getTechStack } from '@/lib/getTechStack';
 import TechStackBadge from '@/components/shared/TechStackBadge';
 import type { TechStack } from '@/lib/microcms';
