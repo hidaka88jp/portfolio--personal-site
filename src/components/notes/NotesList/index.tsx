@@ -1,13 +1,18 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import type { MicroCMSImage } from 'microcms-js-sdk';
 import { useTechStack } from '@/context/TechStackContext';
 import { getTechStack } from '@/lib/getTechStack';
 import clsx from 'clsx';
+import type { TechStack } from '@/constants/techStacks';
 
 type Note = {
   id: string;
   title: string;
+  thumbnail: MicroCMSImage;
+  techStack: TechStack[];
 };
 
 type NotesResponse = {
@@ -45,7 +50,7 @@ export default function NotesList() {
 
   return (
     <section>
-      {/* 選択中カテゴリバッジ */}
+      {/* Selected Tech Stack */}
       <div className='mb-8'>
         <div
           className={clsx(
@@ -54,21 +59,45 @@ export default function NotesList() {
           )}
           style={isAll ? {} : { backgroundColor: teckStack?.color, borderColor: teckStack?.color }}
         >
-          {Icon && !isAll && <Icon className='h-6 w-6' />}
-          <p className='text-2xl'>{isAll ? 'ALL' : teckStack?.name}</p>
+          {Icon && !isAll && <Icon className='h-5 w-5 sm:h-6 sm:w-6' />}
+          <p className='text-xl sm:text-2xl'>{isAll ? 'ALL' : teckStack?.name}</p>
         </div>
       </div>
 
-      {/* 記事リスト */}
+      {/* Notes List */}
       {loading ? (
         <p>Loading...</p>
       ) : notes.length === 0 ? (
         <p>No articles found.</p>
       ) : (
-        <ul className='space-y-4'>
+        <ul className='space-y-9'>
           {notes.map((note) => (
-            <li className='border-b pb-2' key={note.id}>
+            <li
+              className='w-full cursor-pointer border-r-1 border-b-1 border-gray-400 pb-6 hover:opacity-70'
+              key={note.id}
+            >
               <Link href={`/notes/${note.id}`} className='block'>
+                <Image
+                  src={note.thumbnail.url}
+                  alt={`${note.title} thumbnail`}
+                  height={note.thumbnail.height}
+                  width={note.thumbnail.width}
+                  className='aspect-3/2 w-full object-cover'
+                />
+                <div className='flex items-center gap-1 py-2 pr-1'>
+                  {note.techStack.map((stackItem) => {
+                    const stack = getTechStack(stackItem.id);
+                    return (
+                      <div
+                        key={stackItem.id}
+                        className='w-fit rounded-md px-2 py-0.5 text-sm text-white'
+                        style={{ backgroundColor: stack?.color ?? '#666' }}
+                      >
+                        <p>{stackItem.name}</p>
+                      </div>
+                    );
+                  })}
+                </div>
                 {note.title}
               </Link>
             </li>

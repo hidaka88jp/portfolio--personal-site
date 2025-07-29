@@ -38,7 +38,7 @@ export default async function NotesPage() {
                 <div className='sm:order-2 sm:col-span-3'>
                   <NotesList />
                 </div>
-                <div className='sm:order-1 sm:col-span-1 sm:pt-16'>
+                <div className='pt-16 sm:order-1 sm:col-span-1'>
                   <div className='sm:hidden'>
                     <h3 className='border-accent mb-5 border-l-2 pl-2 text-xl'>Category</h3>
                   </div>
