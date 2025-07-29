@@ -70,35 +70,37 @@ export default function NotesList() {
       ) : notes.length === 0 ? (
         <p>No articles found.</p>
       ) : (
-        <ul className='space-y-9'>
+        <ul className='space-y-9 sm:space-y-10'>
           {notes.map((note) => (
             <li
-              className='w-full cursor-pointer border-r-1 border-b-1 border-gray-400 pb-6 hover:opacity-70'
+              className='w-full cursor-pointer border-r-1 border-b-1 border-gray-400 pb-6 hover:opacity-70 sm:border-r-0 sm:pb-2'
               key={note.id}
             >
-              <Link href={`/notes/${note.id}`} className='block'>
+              <Link href={`/notes/${note.id}`} className='block sm:grid sm:grid-cols-3 sm:gap-7'>
                 <Image
                   src={note.thumbnail.url}
                   alt={`${note.title} thumbnail`}
                   height={note.thumbnail.height}
                   width={note.thumbnail.width}
-                  className='aspect-3/2 w-full object-cover'
+                  className='aspect-3/2 w-full object-cover sm:col-span-1'
                 />
-                <div className='flex items-center gap-1 py-2 pr-1'>
-                  {note.techStack.map((stackItem) => {
-                    const stack = getTechStack(stackItem.id);
-                    return (
-                      <div
-                        key={stackItem.id}
-                        className='w-fit rounded-md px-2 py-0.5 text-sm text-white'
-                        style={{ backgroundColor: stack?.color ?? '#666' }}
-                      >
-                        <p>{stackItem.name}</p>
-                      </div>
-                    );
-                  })}
+                <div className='sm:col-span-2'>
+                  <div className='flex items-center gap-1 py-2 pr-1'>
+                    {note.techStack.map((stackItem) => {
+                      const stack = getTechStack(stackItem.id);
+                      return (
+                        <div
+                          key={stackItem.id}
+                          className='w-fit rounded-md px-2 py-0.5 text-sm text-white'
+                          style={{ backgroundColor: stack?.color ?? '#666' }}
+                        >
+                          <p>{stackItem.name}</p>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  {note.title}
                 </div>
-                {note.title}
               </Link>
             </li>
           ))}
