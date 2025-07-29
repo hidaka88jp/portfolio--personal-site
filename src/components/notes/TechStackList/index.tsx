@@ -3,7 +3,7 @@
 import { getTechStack } from '@/lib/getTechStack';
 import TechStackBadge from '@/components/shared/TechStackBadge';
 import type { TechStack } from '@/lib/microcms';
-import { useTechStack } from '@/app/context/TechStackContext';
+import { useTechStack } from '@/context/TechStackContext';
 
 type Props = {
   techStacks: TechStack[];
