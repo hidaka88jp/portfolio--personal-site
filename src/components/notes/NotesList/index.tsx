@@ -25,24 +25,23 @@ export default function NotesList() {
 
   const [notes, setNotes] = useState<Note[]>([]);
   const [totalCount, setTotalCount] = useState(0);
+  const [page, setPage] = useState(1);
   const limit = 10;
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
 
-    fetch(`/api/notes?techStack=${selected}&page=1`)
+    fetch(`/api/notes?techStack=${selected}&page=${page}`)
       .then((res) => res.json())
       .then((data: NotesResponse) => {
         setNotes(data.contents);
         setTotalCount(data.totalCount);
       })
       .finally(() => setLoading(false));
-  }, [selected]);
+  }, [selected, page]);
 
-  // まだUIに出さないが利用している扱いに
   const totalPages = Math.ceil(totalCount / limit);
-  console.log(totalPages);
 
   return (
     <section>
@@ -75,6 +74,24 @@ export default function NotesList() {
             </li>
           ))}
         </ul>
+      )}
+
+      {/* ページネーション */}
+      {totalPages > 1 && (
+        <nav className='mt-6 flex gap-2'>
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+            <button
+              key={p}
+              onClick={() => setPage(p)}
+              className={clsx(
+                'rounded px-3 py-1',
+                p === page ? 'bg-accent text-white' : 'bg-gray-200 hover:bg-gray-300'
+              )}
+            >
+              {p}
+            </button>
+          ))}
+        </nav>
       )}
     </section>
   );
