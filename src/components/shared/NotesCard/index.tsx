@@ -27,10 +27,10 @@ export default function NotesCard({ title, thumbnail, techStacks }: NotesCardPro
         {/* badge */}
         <div className='flex items-center gap-1 py-2'>
           {techStacks.map((techStack) => {
-            const stack = getTechStack(techStack.name);
+            const stack = getTechStack(techStack.id);
             return (
               <div
-                key={techStack.name}
+                key={techStack.id}
                 className='w-fit rounded-md px-2 py-0.5 text-sm text-white'
                 style={{ backgroundColor: stack?.color ?? '#666' }}
               >

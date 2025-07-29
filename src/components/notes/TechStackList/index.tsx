@@ -21,7 +21,7 @@ export default function TechStackList({ techStacks }: Props) {
         ALL
       </li>
       {techStacks.map((apiStack) => {
-        const localStack = getTechStack(apiStack.name);
+        const localStack = getTechStack(apiStack.id);
         if (!localStack) return null;
 
         return (
