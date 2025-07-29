@@ -10,6 +10,13 @@ type Note = {
   title: string;
 };
 
+type NotesResponse = {
+  contents: Note[];
+  totalCount: number;
+  offset: number;
+  limit: number;
+};
+
 export default function NotesList() {
   const { selected } = useTechStack();
   const teckStack = getTechStack(selected);
@@ -17,15 +24,25 @@ export default function NotesList() {
   const isAll = selected === '';
 
   const [notes, setNotes] = useState<Note[]>([]);
+  const [totalCount, setTotalCount] = useState(0);
+  const limit = 10;
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
+
     fetch(`/api/notes?techStack=${selected}&page=1`)
       .then((res) => res.json())
-      .then((data) => setNotes(data.contents))
+      .then((data: NotesResponse) => {
+        setNotes(data.contents);
+        setTotalCount(data.totalCount);
+      })
       .finally(() => setLoading(false));
   }, [selected]);
+
+  // まだUIに出さないが利用している扱いに
+  const totalPages = Math.ceil(totalCount / limit);
+  console.log(totalPages);
 
   return (
     <section>
