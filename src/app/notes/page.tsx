@@ -36,6 +36,9 @@ export default async function NotesPage() {
               <div className='grid grid-cols-1 gap-5 sm:grid-cols-4'>
                 <div className='bg-amber-900 sm:order-2 sm:col-span-3'></div>
                 <div className='sm:order-1 sm:col-span-1'>
+                  <div className='sm:hidden'>
+                    <h3 className='border-accent mb-5 border-l-2 pl-2 text-xl'>Category</h3>
+                  </div>
                   <TechStackList techStacks={techStacks.contents} />
                 </div>
               </div>
