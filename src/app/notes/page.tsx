@@ -2,6 +2,7 @@ import { getTechStacks } from '@/lib/microcms';
 import Image from 'next/image';
 import TechStackList from '@/components/notes/TechStackList';
 import { TechStackProvider } from '../context/TechStackContext';
+// import NotesList from '@/components/notes/NotesList';
 
 export default async function NotesPage() {
   const techStacks = await getTechStacks();
@@ -34,7 +35,7 @@ export default async function NotesPage() {
           <div className='px-4 pb-16 sm:px-8 sm:pb-28'>
             <div className='mx-auto w-full max-w-94 sm:max-w-5xl'>
               <div className='grid grid-cols-1 gap-5 sm:grid-cols-4'>
-                <div className='bg-amber-900 sm:order-2 sm:col-span-3'></div>
+                <div className='sm:order-2 sm:col-span-3'>{/* <NotesList /> */}</div>
                 <div className='sm:order-1 sm:col-span-1'>
                   <div className='sm:hidden'>
                     <h3 className='border-accent mb-5 border-l-2 pl-2 text-xl'>Category</h3>
