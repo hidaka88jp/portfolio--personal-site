@@ -13,10 +13,10 @@ type Works = {
   title: string;
   thumbnail: MicroCMSImage;
   category: string;
-  techStack: TechStack[];
+  techStacks: TechStack[];
 };
 
-export default function WorksCard({ id, title, thumbnail, category, techStack }: Works) {
+export default function WorksCard({ id, title, thumbnail, category, techStacks }: Works) {
   return (
     <Link className='block' href={`/${id}`} aria-label={`View details for ${title}`}>
       <div className='relative w-full cursor-pointer pr-6 hover:opacity-70'>
@@ -29,7 +29,7 @@ export default function WorksCard({ id, title, thumbnail, category, techStack }:
             className='aspect-square w-full object-cover object-top pr-2'
           />
           <div className='flex items-center gap-1 py-2'>
-            {techStack.map((stackItem) => {
+            {techStacks.map((stackItem) => {
               const stack = getTechStack(stackItem.id);
               return (
                 <div

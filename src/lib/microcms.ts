@@ -9,7 +9,7 @@ export type TechStack = {
 export type Works = {
   title: string;
   category: string;
-  techStack: string[];
+  techStack: TechStack[];
   content: string;
   thumbnail: MicroCMSImage;
 } & MicroCMSListContent;

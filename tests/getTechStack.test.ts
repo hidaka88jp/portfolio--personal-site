@@ -3,8 +3,8 @@ import { getTechStack } from '@/lib/getTechStack';
 
 describe('getTechStack', () => {
   it('returns correct tech stack object for known name', () => {
-    const result = getTechStack('Next.js');
-    expect(result?.name).toBe('Next.js');
+    const result = getTechStack('nextjs');
+    expect(result?.id).toBe('nextjs');
     expect(result?.color).toBe('#383434');
   });
 
