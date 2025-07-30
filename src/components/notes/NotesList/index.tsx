@@ -7,6 +7,7 @@ import { useTechStack } from '@/context/TechStackContext';
 import { getTechStack } from '@/lib/getTechStack';
 import clsx from 'clsx';
 import type { TechStack } from '@/constants/techStacks';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 type Note = {
   id: string;
@@ -109,19 +110,36 @@ export default function NotesList() {
 
       {/* ページネーション */}
       {totalPages > 1 && (
-        <nav className='mt-6 flex gap-2'>
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
-            <button
-              key={p}
-              onClick={() => setPage(p)}
-              className={clsx(
-                'rounded px-3 py-1',
-                p === page ? 'bg-accent text-white' : 'bg-gray-200 hover:bg-gray-300'
-              )}
-            >
-              {p}
-            </button>
-          ))}
+        <nav className='border-gray mx-auto mt-6 flex w-fit items-center gap-5 rounded-md border px-4 py-1'>
+          <button
+            onClick={() => setPage(page - 1)}
+            disabled={page === 1}
+            className={clsx(
+              'flex items-center gap-1 px-1.5',
+              page === 1 ? 'cursor-default text-gray-300' : 'hover:text-accent cursor-pointer'
+            )}
+          >
+            <IoIosArrowBack className='h-5 w-5' />
+            Prev
+          </button>
+          <div className='bg-gray h-3 w-px' />
+          <p className='text-sm'>
+            {page} / {totalPages}
+          </p>
+          <div className='bg-gray h-3 w-px' />
+          <button
+            onClick={() => setPage(page + 1)}
+            disabled={page === totalPages}
+            className={clsx(
+              'flex items-center gap-1 px-1.5',
+              page === totalPages
+                ? 'cursor-default text-gray-300'
+                : 'hover:text-accent cursor-pointer'
+            )}
+          >
+            Next
+            <IoIosArrowForward className='h-5 w-5' />
+          </button>
         </nav>
       )}
     </section>
