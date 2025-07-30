@@ -9,7 +9,10 @@ const mockProps = {
     width: 800,
     height: 600,
   },
-  techStack: ['Next.js', 'Jest'],
+  techStacks: [
+    { id: 'nextjs', name: 'Next.js' },
+    { id: 'tailwindcss', name: 'Tailwind CSS' },
+  ],
 };
 
 describe('NotesCard', () => {
@@ -21,7 +24,7 @@ describe('NotesCard', () => {
 
     // Tech Stack Badges
     expect(screen.getByText('Next.js')).toBeInTheDocument();
-    expect(screen.getByText('Jest')).toBeInTheDocument();
+    expect(screen.getByText('Tailwind CSS')).toBeInTheDocument();
   });
 
   it('renders thumbnail image with correct alt text', () => {

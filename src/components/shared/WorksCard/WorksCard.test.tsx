@@ -11,7 +11,10 @@ const mockProps = {
     width: 800,
     height: 600,
   },
-  techStack: ['Next.js', 'Tailwind CSS'],
+  techStacks: [
+    { id: 'nextjs', name: 'Next.js' },
+    { id: 'tailwindcss', name: 'Tailwind CSS' },
+  ],
 };
 
 describe('WorksCard', () => {

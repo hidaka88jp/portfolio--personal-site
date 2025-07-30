@@ -19,7 +19,7 @@ export default async function TopWorks() {
               title={work.title}
               thumbnail={work.thumbnail}
               category={work.category}
-              techStack={work.techStack}
+              techStacks={work.techStack}
             />
           ))}
         </div>

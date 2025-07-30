@@ -2,13 +2,18 @@ import Image from 'next/image';
 import { getTechStack } from '@/lib/getTechStack';
 import type { MicroCMSImage } from 'microcms-js-sdk';
 
+type TechStack = {
+  id: string;
+  name: string;
+};
+
 type NotesCardProps = {
   title: string;
   thumbnail: MicroCMSImage;
-  techStack: string[];
+  techStacks: TechStack[];
 };
 
-export default function NotesCard({ title, thumbnail, techStack }: NotesCardProps) {
+export default function NotesCard({ title, thumbnail, techStacks }: NotesCardProps) {
   return (
     <div className='relative w-full cursor-pointer border-r-1 border-b-1 border-gray-400 pb-6 hover:opacity-70'>
       <Image
@@ -21,15 +26,15 @@ export default function NotesCard({ title, thumbnail, techStack }: NotesCardProp
       <div className='pr-1'>
         {/* badge */}
         <div className='flex items-center gap-1 py-2'>
-          {techStack.map((name) => {
-            const stack = getTechStack(name);
+          {techStacks.map((techStack) => {
+            const stack = getTechStack(techStack.id);
             return (
               <div
-                key={name}
+                key={techStack.id}
                 className='w-fit rounded-md px-2 py-0.5 text-sm text-white'
                 style={{ backgroundColor: stack?.color ?? '#666' }}
               >
-                <p>{name}</p>
+                <p>{techStack.name}</p>
               </div>
             );
           })}
