@@ -46,7 +46,14 @@ export default async function NoteDetailPage({ params }: NoteDetailPageProps) {
               </p>
               <TechStackLabel techStacks={note.techStack} />
             </div>
-            <h1 className='mb-6 text-3xl font-bold sm:text-4xl'>{note.title}</h1>
+            <h1 className='mb-6 text-2xl font-medium'>{note.title}</h1>
+            <Image
+              src={note.thumbnail.url}
+              alt={`${note.title} thumbnail`}
+              height={note.thumbnail.height}
+              width={note.thumbnail.width}
+              className='w-full object-cover'
+            />
           </div>
         </article>
       </section>
