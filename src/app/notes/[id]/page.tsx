@@ -52,7 +52,11 @@ export default async function NoteDetailPage({ params }: NoteDetailPageProps) {
               alt={`${note.title} thumbnail`}
               height={note.thumbnail.height}
               width={note.thumbnail.width}
-              className='w-full object-cover'
+              className='mb-10 w-full object-cover sm:mb-14'
+            />
+            <div
+              className='article mb-10 md:mb-14'
+              dangerouslySetInnerHTML={{ __html: note.content }}
             />
           </div>
         </article>
