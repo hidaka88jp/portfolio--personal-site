@@ -47,6 +47,10 @@ export default function NotesList() {
       .finally(() => setLoading(false));
   }, [selected, page]);
 
+  useEffect(() => {
+    setPage(1);
+  }, [selected]);
+
   const totalPages = Math.ceil(totalCount / limit);
 
   return (
