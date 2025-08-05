@@ -1,5 +1,6 @@
 import { getTechStacks } from '@/lib/microcms';
 import Image from 'next/image';
+import { Suspense } from 'react';
 import TechStackList from '@/components/notes/TechStackList';
 import { TechStackProvider } from '../../context/TechStackContext';
 import NotesList from '@/components/notes/NotesList';
@@ -36,7 +37,9 @@ export default async function NotesPage() {
             <div className='mx-auto w-full max-w-94 sm:max-w-5xl'>
               <div className='grid grid-cols-1 gap-5 sm:grid-cols-4'>
                 <div className='sm:order-2 sm:col-span-3'>
-                  <NotesList />
+                  <Suspense fallback={<p>Loading...</p>}>
+                    <NotesList />
+                  </Suspense>
                 </div>
                 <div className='pt-16 sm:order-1 sm:col-span-1'>
                   <div className='sm:hidden'>

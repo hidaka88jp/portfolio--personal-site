@@ -11,7 +11,7 @@ type NoteDetailPageProps = {
 };
 
 export default async function NoteDetailPage({ params, searchParams }: NoteDetailPageProps) {
-  const { from: rawFrom } = await searchParams; // ← awaitで展開してから
+  const { from: rawFrom } = await searchParams;
   const from = rawFrom ? decodeURIComponent(rawFrom) : '/notes';
   const backLabel = from.includes('#notes') ? 'Back to Top' : 'Back to Notes';
 
