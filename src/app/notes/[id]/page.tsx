@@ -12,6 +12,8 @@ type NoteDetailPageProps = {
 
 export default async function NoteDetailPage({ params, searchParams }: NoteDetailPageProps) {
   const from = searchParams.from ? decodeURIComponent(searchParams.from) : '/notes';
+  const backLabel = from.includes('#notes') ? 'Back to Top' : 'Back to Notes';
+
   const { id } = await params;
   const note = await getNoteDetail(id);
 
@@ -62,7 +64,7 @@ export default async function NoteDetailPage({ params, searchParams }: NoteDetai
               dangerouslySetInnerHTML={{ __html: note.content }}
             />
             <div className='flex flex-col items-center justify-center'>
-              <LinkButton href={from}>Back to Notes</LinkButton>
+              <LinkButton href={from}>{backLabel}</LinkButton>
             </div>
           </div>
         </article>
