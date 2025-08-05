@@ -97,7 +97,10 @@ export default function NotesList() {
               className='w-full cursor-pointer border-r-1 border-b-1 border-gray-400 pb-6 hover:opacity-70 sm:border-r-0 sm:pb-2'
               key={note.id}
             >
-              <Link href={`/notes/${note.id}`} className='block sm:grid sm:grid-cols-3 sm:gap-7'>
+              <Link
+                href={`/notes/${note.id}?from=${encodeURIComponent(`/notes?techStack=${selected}&page=${page}`)}`}
+                className='block sm:grid sm:grid-cols-3 sm:gap-7'
+              >
                 <Image
                   src={note.thumbnail.url}
                   alt={`${note.title} thumbnail`}
