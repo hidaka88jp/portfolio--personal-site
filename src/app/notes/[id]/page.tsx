@@ -6,12 +6,13 @@ import TechStackLabel from '@/components/shared/TechStackLabel';
 import LinkButton from '@/components/shared/LinkButton';
 
 type NoteDetailPageProps = {
-  params: { id: string };
-  searchParams: { from?: string };
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ from?: string }>;
 };
 
 export default async function NoteDetailPage({ params, searchParams }: NoteDetailPageProps) {
-  const from = searchParams.from ? decodeURIComponent(searchParams.from) : '/notes';
+  const { from: rawFrom } = await searchParams; // ← awaitで展開してから
+  const from = rawFrom ? decodeURIComponent(rawFrom) : '/notes';
   const backLabel = from.includes('#notes') ? 'Back to Top' : 'Back to Notes';
 
   const { id } = await params;
