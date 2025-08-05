@@ -25,16 +25,25 @@ type NotesResponse = {
 };
 
 export default function NotesList() {
-  const { selected } = useTechStack();
+  const { selected, setSelected } = useTechStack();
   const teckStack = getTechStack(selected);
   const Icon = teckStack?.Icon;
   const isAll = selected === '';
 
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const initialPage = Number(searchParams.get('page') || '1');
+  const initialTechStack = searchParams.get('techStack') || '';
+
+  const [loading, setLoading] = useState(true);
+  const limit = 10;
   const [notes, setNotes] = useState<Note[]>([]);
   const [totalCount, setTotalCount] = useState(0);
-  const [page, setPage] = useState(1);
-  const limit = 10;
-  const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(initialPage);
+  useEffect(() => {
+    setSelected(initialTechStack);
+  }, [initialTechStack, setSelected]);
 
   useEffect(() => {
     setLoading(true);
@@ -53,9 +62,6 @@ export default function NotesList() {
   }, [selected]);
 
   const totalPages = Math.ceil(totalCount / limit);
-
-  const router = useRouter();
-  const searchParams = useSearchParams();
 
   function handlePageChange(newPage: number) {
     const techStack = searchParams.get('techStack') || ''; // current techStack
