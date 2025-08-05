@@ -19,6 +19,7 @@ export default async function TopNotes() {
               <NotesCard
                 key={note.id}
                 title={note.title}
+                link={note.id}
                 thumbnail={note.thumbnail}
                 techStacks={note.techStack}
               />

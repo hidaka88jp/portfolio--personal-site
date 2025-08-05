@@ -3,12 +3,18 @@ import { notFound } from 'next/navigation';
 import { formatDate } from '@/lib/formatDate';
 import Image from 'next/image';
 import TechStackLabel from '@/components/shared/TechStackLabel';
+import LinkButton from '@/components/shared/LinkButton';
 
 type NoteDetailPageProps = {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ from?: string }>;
 };
 
-export default async function NoteDetailPage({ params }: NoteDetailPageProps) {
+export default async function NoteDetailPage({ params, searchParams }: NoteDetailPageProps) {
+  const { from: rawFrom } = await searchParams;
+  const from = rawFrom ? decodeURIComponent(rawFrom) : '/notes';
+  const backLabel = from.includes('#notes') ? 'Back to Top' : 'Back to Notes';
+
   const { id } = await params;
   const note = await getNoteDetail(id);
 
@@ -58,6 +64,9 @@ export default async function NoteDetailPage({ params }: NoteDetailPageProps) {
               className='article mb-10 md:mb-14'
               dangerouslySetInnerHTML={{ __html: note.content }}
             />
+            <div className='flex flex-col items-center justify-center'>
+              <LinkButton href={from}>{backLabel}</LinkButton>
+            </div>
           </div>
         </article>
       </section>

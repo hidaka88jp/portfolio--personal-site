@@ -4,6 +4,7 @@ import '@testing-library/jest-dom';
 
 const mockProps = {
   title: 'Learning GitHub Actions',
+  link: 'learning-github-actions',
   thumbnail: {
     url: 'https://example.com/note-image.png',
     width: 800,
