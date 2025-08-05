@@ -7,6 +7,10 @@ jest.mock('@/context/TechStackContext', () => ({
   useTechStack: jest.fn(),
 }));
 
+jest.mock('next/navigation', () => ({
+  useRouter: () => ({ push: jest.fn() }),
+}));
+
 const mockSetSelected = jest.fn();
 
 describe('TechStackList', () => {
