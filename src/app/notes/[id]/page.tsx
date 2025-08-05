@@ -6,7 +6,7 @@ import TechStackLabel from '@/components/shared/TechStackLabel';
 import LinkButton from '@/components/shared/LinkButton';
 
 type NoteDetailPageProps = {
-  params: Promise<{ id: string }>;
+  params: { id: string };
   searchParams: { from?: string };
 };
 
