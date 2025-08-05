@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { MicroCMSImage } from 'microcms-js-sdk';
@@ -52,6 +53,15 @@ export default function NotesList() {
   }, [selected]);
 
   const totalPages = Math.ceil(totalCount / limit);
+
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  function handlePageChange(newPage: number) {
+    const techStack = searchParams.get('techStack') || ''; // current techStack
+    router.push(`/notes?techStack=${techStack}&page=${newPage}`);
+    setPage(newPage);
+  }
 
   return (
     <section>
@@ -116,7 +126,7 @@ export default function NotesList() {
       {totalPages > 1 && (
         <nav className='border-gray mx-auto mt-6 flex w-fit items-center gap-5 rounded-md border px-4 py-1'>
           <button
-            onClick={() => setPage(page - 1)}
+            onClick={() => handlePageChange(page - 1)}
             disabled={page === 1}
             className={clsx(
               'flex items-center gap-1 px-1.5',
@@ -132,7 +142,7 @@ export default function NotesList() {
           </p>
           <div className='bg-gray h-3 w-px' />
           <button
-            onClick={() => setPage(page + 1)}
+            onClick={() => handlePageChange(page + 1)}
             disabled={page === totalPages}
             className={clsx(
               'flex items-center gap-1 px-1.5',
