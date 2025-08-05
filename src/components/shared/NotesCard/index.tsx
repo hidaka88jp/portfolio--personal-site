@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { getTechStack } from '@/lib/getTechStack';
 import type { MicroCMSImage } from 'microcms-js-sdk';
 
@@ -9,13 +10,17 @@ type TechStack = {
 
 type NotesCardProps = {
   title: string;
+  link: string;
   thumbnail: MicroCMSImage;
   techStacks: TechStack[];
 };
 
-export default function NotesCard({ title, thumbnail, techStacks }: NotesCardProps) {
+export default function NotesCard({ title, link, thumbnail, techStacks }: NotesCardProps) {
   return (
-    <div className='relative w-full cursor-pointer border-r-1 border-b-1 border-gray-400 pb-6 hover:opacity-70'>
+    <Link
+      href={`/notes/${link}?from=${encodeURIComponent('/#notes')}`}
+      className='relative w-full cursor-pointer border-r-1 border-b-1 border-gray-400 pb-6 hover:opacity-70'
+    >
       <Image
         src={thumbnail.url}
         alt={`${title} thumbnail`}
@@ -42,6 +47,6 @@ export default function NotesCard({ title, thumbnail, techStacks }: NotesCardPro
         {/* title */}
         <h3>{title}</h3>
       </div>
-    </div>
+    </Link>
   );
 }
