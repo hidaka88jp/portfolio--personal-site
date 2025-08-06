@@ -4,6 +4,7 @@ import { formatDate } from '@/lib/formatDate';
 import Image from 'next/image';
 import TechStackLabel from '@/components/shared/TechStackLabel';
 import LinkButton from '@/components/shared/LinkButton';
+import { FaRegClock } from 'react-icons/fa6';
 
 type NoteDetailPageProps = {
   params: Promise<{ id: string }>;
@@ -46,10 +47,11 @@ export default async function NoteDetailPage({ params, searchParams }: NoteDetai
       <section>
         <article className='px-4 pb-16 sm:px-8 sm:pb-28'>
           <div className='mx-auto w-full max-w-94 sm:max-w-2xl'>
-            <div className='flex items-center gap-2.5'>
-              <p className='text-gray font-inconsolata'>
-                {formatDate(note.publishedAt ?? note.createdAt)}
-              </p>
+            <div className='mb-2 flex items-center gap-3.5'>
+              <div className='text-gray flex items-center gap-1'>
+                <FaRegClock size={18} />
+                <p>{formatDate(note.publishedAt ?? note.createdAt)}</p>
+              </div>
               <TechStackLabel techStacks={note.techStack} className='gap-1.5' />
             </div>
             <h1 className='mb-6 text-2xl font-medium'>{note.title}</h1>
