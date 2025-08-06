@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { getTechStack } from '@/lib/getTechStack';
+import TechStackLabel from '@/components/shared/TechStackLabel';
 import type { MicroCMSImage } from 'microcms-js-sdk';
 
 type TechStack = {
@@ -30,20 +30,7 @@ export default function NotesCard({ title, link, thumbnail, techStacks }: NotesC
       />
       <div className='pr-1'>
         {/* badge */}
-        <div className='flex items-center gap-1 py-2'>
-          {techStacks.map((techStack) => {
-            const stack = getTechStack(techStack.id);
-            return (
-              <div
-                key={techStack.id}
-                className='w-fit rounded-md px-2 py-0.5 text-sm text-white'
-                style={{ backgroundColor: stack?.color ?? '#666' }}
-              >
-                <p>{techStack.name}</p>
-              </div>
-            );
-          })}
-        </div>
+        <TechStackLabel techStacks={techStacks} />
         {/* title */}
         <h3>{title}</h3>
       </div>
