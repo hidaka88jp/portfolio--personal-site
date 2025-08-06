@@ -9,6 +9,7 @@ import { getTechStack } from '@/lib/getTechStack';
 import clsx from 'clsx';
 import type { TechStack } from '@/constants/techStacks';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import TechStackLabel from '@/components/shared/TechStackLabel';
 
 type Note = {
   id: string;
@@ -109,20 +110,7 @@ export default function NotesList() {
                   className='aspect-3/2 w-full object-cover sm:col-span-1'
                 />
                 <div className='sm:col-span-2'>
-                  <div className='flex items-center gap-1 py-2 pr-1'>
-                    {note.techStack.map((stackItem) => {
-                      const stack = getTechStack(stackItem.id);
-                      return (
-                        <div
-                          key={stackItem.id}
-                          className='w-fit rounded-md px-2 py-0.5 text-sm text-white'
-                          style={{ backgroundColor: stack?.color ?? '#666' }}
-                        >
-                          <p>{stackItem.name}</p>
-                        </div>
-                      );
-                    })}
-                  </div>
+                  <TechStackLabel techStacks={note.techStack} />
                   {note.title}
                 </div>
               </Link>
