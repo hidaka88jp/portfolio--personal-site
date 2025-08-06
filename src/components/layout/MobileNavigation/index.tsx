@@ -6,6 +6,7 @@ import { MdArrowForward } from 'react-icons/md';
 import { NAV_LINKS } from '@/constants/navigation';
 import { SOCIAL_LINKS } from '@/constants/navigation';
 import { setThemeColor } from '@/lib/themeColor';
+import Link from 'next/link';
 
 type Props = {
   className: string;
@@ -48,9 +49,9 @@ export default function MobileNavigation({ className }: Props) {
         </button>
         <div className='flex flex-col items-center space-y-4 pt-24'>
           {NAV_LINKS.map(({ href, label }) => (
-            <a key={href} href={href}>
+            <Link key={href} href={href} onClick={() => setIsOpen(false)}>
               {label}
-            </a>
+            </Link>
           ))}
         </div>
         <div className='mt-6 h-px w-8 bg-white' />
@@ -62,6 +63,7 @@ export default function MobileNavigation({ className }: Props) {
               target='_blank'
               rel='noopener noreferrer'
               className='flex items-center'
+              onClick={() => setIsOpen(false)}
             >
               <Icon className='mr-1' />
               {label}
