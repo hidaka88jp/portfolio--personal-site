@@ -50,7 +50,7 @@ export default async function NoteDetailPage({ params, searchParams }: NoteDetai
               <p className='text-gray font-inconsolata'>
                 {formatDate(note.publishedAt ?? note.createdAt)}
               </p>
-              <TechStackLabel techStacks={note.techStack} />
+              <TechStackLabel techStacks={note.techStack} className='gap-1.5' />
             </div>
             <h1 className='mb-6 text-2xl font-medium'>{note.title}</h1>
             <Image
