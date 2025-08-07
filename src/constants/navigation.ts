@@ -3,7 +3,7 @@ import { FaLinkedin, FaSquareXTwitter } from 'react-icons/fa6';
 export const NAV_LINKS = [
   { href: '/#about', label: 'About' },
   { href: '/#works', label: 'Works' },
-  { href: '/#notes', label: 'Notes' },
+  { href: '/notes', label: 'Notes' },
 ];
 
 export const SOCIAL_LINKS = [
