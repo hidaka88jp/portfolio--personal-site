@@ -19,18 +19,18 @@ export default function NotesCard({ title, link, thumbnail, techStacks }: NotesC
   return (
     <Link
       href={`/notes/${link}?from=${encodeURIComponent('/#notes')}`}
-      className='relative grid w-full cursor-pointer grid-cols-2 gap-3 border-b-1 border-gray-400 pb-2 hover:opacity-70 sm:block sm:border-r-1 sm:pb-6'
+      className='relative grid w-full cursor-pointer grid-cols-2 gap-3 border-b-1 border-gray-400 pb-2 hover:opacity-70 lg:block lg:border-r-1 lg:pb-6'
     >
       <Image
         src={thumbnail.url}
         alt={`${title} thumbnail`}
         height={thumbnail.height}
         width={thumbnail.width}
-        className='col-span-1 object-cover sm:aspect-3/2 sm:w-full'
+        className='col-span-1 object-cover lg:aspect-3/2 lg:w-full'
       />
       <div className='col-span-1 pr-1'>
         {/* badge */}
-        <TechStackLabel techStacks={techStacks} className='pt-0 sm:pt-2' />
+        <TechStackLabel techStacks={techStacks} className='pt-0 lg:pt-2' />
         {/* title */}
         <h3>{title}</h3>
       </div>
