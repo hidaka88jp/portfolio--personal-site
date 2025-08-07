@@ -37,7 +37,7 @@ export default async function NoteDetailPage({ params, searchParams }: NoteDetai
         <div className='hidden h-full px-4 sm:block sm:px-8'>
           <div className='mx-auto h-full w-full max-w-94 sm:max-w-5xl'>
             <div className='flex h-full flex-col items-center gap-2.5 sm:items-start sm:justify-center'>
-              <h1 className='font-inconsolata text-2xl'>Notes</h1>
+              <h1 className='font-inconsolata text-4xl'>Notes</h1>
               <p className='font-inconsolata'>What I Learned</p>
               <div className='bg-accent h-0.5 w-7' />
             </div>
