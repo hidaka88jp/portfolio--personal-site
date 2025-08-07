@@ -11,6 +11,8 @@ type NoteDetailPageProps = {
   searchParams: Promise<{ from?: string }>;
 };
 
+export const revalidate = 60; // Revalidate every 60 seconds
+
 export default async function NoteDetailPage({ params, searchParams }: NoteDetailPageProps) {
   const { from: rawFrom } = await searchParams;
   const from = rawFrom ? decodeURIComponent(rawFrom) : '/notes';
