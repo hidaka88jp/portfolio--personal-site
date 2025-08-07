@@ -9,6 +9,7 @@ import { getTechStack } from '@/lib/getTechStack';
 import clsx from 'clsx';
 import type { TechStack } from '@/constants/techStacks';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import { FaArrowDownShortWide } from 'react-icons/fa6';
 import TechStackLabel from '@/components/shared/TechStackLabel';
 
 type Note = {
@@ -73,7 +74,7 @@ export default function NotesList() {
   return (
     <section>
       {/* Selected Tech Stack */}
-      <div className='mb-8'>
+      <div className='mb-8 flex items-end justify-between sm:block'>
         <div
           className={clsx(
             'flex w-fit items-center gap-2 rounded-md border px-2 py-1',
@@ -84,6 +85,14 @@ export default function NotesList() {
           {Icon && !isAll && <Icon className='h-5 w-5 sm:h-6 sm:w-6' />}
           <p className='text-xl sm:text-2xl'>{isAll ? 'ALL' : teckStack?.name}</p>
         </div>
+        <Link
+          href='#category'
+          className='text-gray flex items-center gap-0.5 border-b-1 sm:hidden'
+          aria-label='Jump to category filter'
+        >
+          <FaArrowDownShortWide className='h-4 w-4' />
+          <p>Category</p>
+        </Link>
       </div>
 
       {/* Notes List */}

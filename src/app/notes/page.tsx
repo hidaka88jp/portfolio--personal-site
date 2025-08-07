@@ -42,9 +42,11 @@ export default async function NotesPage() {
                     <NotesList />
                   </Suspense>
                 </div>
-                <div className='pt-16 sm:order-1 sm:col-span-1 sm:pt-20'>
+                <div className='pt-5 sm:order-1 sm:col-span-1 sm:pt-20'>
                   <div className='sm:hidden'>
-                    <h3 className='border-accent mb-5 border-l-2 pl-2 text-xl'>Category</h3>
+                    <h3 id='category' className='border-accent mb-5 border-l-2 pl-2 text-xl'>
+                      Category
+                    </h3>
                   </div>
                   <TechStackList techStacks={techStacks.contents} />
                 </div>
