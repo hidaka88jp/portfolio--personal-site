@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import TechStackList from '@/components/notes/TechStackList';
 import { TechStackProvider } from '../../context/TechStackContext';
 import NotesList from '@/components/notes/NotesList';
+import LinkButton from '@/components/shared/LinkButton';
 
 export default async function NotesPage() {
   const techStacks = await getTechStacks();
@@ -35,7 +36,7 @@ export default async function NotesPage() {
         <section>
           <div className='px-4 pb-16 sm:px-8 sm:pb-28'>
             <div className='mx-auto w-full max-w-94 sm:max-w-5xl'>
-              <div className='grid grid-cols-1 gap-5 sm:grid-cols-4'>
+              <div className='mb-10 grid grid-cols-1 gap-5 sm:grid-cols-4 md:mb-14'>
                 <div className='sm:order-2 sm:col-span-3'>
                   <Suspense fallback={<p>Loading...</p>}>
                     <NotesList />
@@ -47,6 +48,11 @@ export default async function NotesPage() {
                   </div>
                   <TechStackList techStacks={techStacks.contents} />
                 </div>
+              </div>
+              <div className='flex flex-col items-center justify-center'>
+                <LinkButton href={'/#notes'} aria-label='Back to top page Notes section'>
+                  Back to Top
+                </LinkButton>
               </div>
             </div>
           </div>
