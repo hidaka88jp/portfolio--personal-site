@@ -34,11 +34,11 @@ describe('Header', () => {
     render(<Header />);
     // MobileNavigation
     const mobileNav = screen.getByLabelText('Open menu').closest('div');
-    expect(mobileNav).toHaveClass('sm:hidden');
+    expect(mobileNav).toHaveClass('lg:hidden');
 
     // DesktopNavigation
     const desktopNav = screen.getByTestId('desktop-nav');
     expect(desktopNav).toHaveClass('hidden');
-    expect(desktopNav).toHaveClass('sm:flex');
+    expect(desktopNav).toHaveClass('lg:flex');
   });
 });
