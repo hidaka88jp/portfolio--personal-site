@@ -6,6 +6,10 @@ import { TechStackProvider } from '../../context/TechStackContext';
 import NotesList from '@/components/notes/NotesList';
 import LinkButton from '@/components/shared/LinkButton';
 
+export const metadata = {
+  title: 'Notes',
+};
+
 export default async function NotesPage() {
   const techStacks = await getTechStacks();
 

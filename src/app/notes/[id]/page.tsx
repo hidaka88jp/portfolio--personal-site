@@ -13,6 +13,17 @@ type NoteDetailPageProps = {
 
 export const revalidate = 60; // Revalidate every 60 seconds
 
+export async function generateMetadata({ params }: NoteDetailPageProps) {
+  const { id } = await params;
+  const note = await getNoteDetail(id);
+
+  if (!note) return {};
+
+  return {
+    title: note.title,
+  };
+}
+
 export default async function NoteDetailPage({ params, searchParams }: NoteDetailPageProps) {
   const { from: rawFrom } = await searchParams;
   const from = rawFrom ? decodeURIComponent(rawFrom) : '/notes';

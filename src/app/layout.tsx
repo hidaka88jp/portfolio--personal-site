@@ -7,7 +7,10 @@ import Footer from '@/components/layout/Footer';
 import clsx from 'clsx';
 
 export const metadata: Metadata = {
-  title: 'TAKANORI HIDAKA',
+  title: {
+    template: '%s | TAKANORI HIDAKA',
+    default: 'TAKANORI HIDAKA',
+  },
   description: "Showcasing my projects and things I've learned",
 };
 

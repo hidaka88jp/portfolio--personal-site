@@ -8,6 +8,17 @@ type WorkDetailPageProps = {
 
 export const revalidate = 60; // Revalidate every 60 seconds
 
+export async function generateMetadata({ params }: WorkDetailPageProps) {
+  const { id } = await params;
+  const work = await getWorkDetail(id);
+
+  if (!work) return {};
+
+  return {
+    title: work.title,
+  };
+}
+
 export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
   const { id } = await params; // await the params to get the id
   const work = await getWorkDetail(id);
