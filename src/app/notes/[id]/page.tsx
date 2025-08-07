@@ -4,11 +4,25 @@ import { formatDate } from '@/lib/formatDate';
 import Image from 'next/image';
 import TechStackLabel from '@/components/shared/TechStackLabel';
 import LinkButton from '@/components/shared/LinkButton';
+import { FaRegClock } from 'react-icons/fa6';
 
 type NoteDetailPageProps = {
   params: Promise<{ id: string }>;
   searchParams: Promise<{ from?: string }>;
 };
+
+export const revalidate = 60; // Revalidate every 60 seconds
+
+export async function generateMetadata({ params }: NoteDetailPageProps) {
+  const { id } = await params;
+  const note = await getNoteDetail(id);
+
+  if (!note) return {};
+
+  return {
+    title: note.title,
+  };
+}
 
 export default async function NoteDetailPage({ params, searchParams }: NoteDetailPageProps) {
   const { from: rawFrom } = await searchParams;
@@ -36,7 +50,7 @@ export default async function NoteDetailPage({ params, searchParams }: NoteDetai
         <div className='hidden h-full px-4 sm:block sm:px-8'>
           <div className='mx-auto h-full w-full max-w-94 sm:max-w-5xl'>
             <div className='flex h-full flex-col items-center gap-2.5 sm:items-start sm:justify-center'>
-              <h1 className='font-inconsolata text-2xl'>Notes</h1>
+              <h1 className='font-inconsolata text-4xl'>Notes</h1>
               <p className='font-inconsolata'>What I Learned</p>
               <div className='bg-accent h-0.5 w-7' />
             </div>
@@ -46,11 +60,12 @@ export default async function NoteDetailPage({ params, searchParams }: NoteDetai
       <section>
         <article className='px-4 pb-16 sm:px-8 sm:pb-28'>
           <div className='mx-auto w-full max-w-94 sm:max-w-2xl'>
-            <div className='flex items-center gap-2.5'>
-              <p className='text-gray font-inconsolata'>
-                {formatDate(note.publishedAt ?? note.createdAt)}
-              </p>
-              <TechStackLabel techStacks={note.techStack} />
+            <div className='mb-2 flex items-center gap-3.5'>
+              <div className='text-gray flex items-center gap-1'>
+                <FaRegClock size={18} />
+                <p>{formatDate(note.publishedAt ?? note.createdAt)}</p>
+              </div>
+              <TechStackLabel techStacks={note.techStack} className='gap-1.5' />
             </div>
             <h1 className='mb-6 text-2xl font-medium'>{note.title}</h1>
             <Image

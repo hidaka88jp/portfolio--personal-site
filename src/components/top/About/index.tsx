@@ -4,7 +4,33 @@ import { TECH_STACKS } from '@/constants/techStacks';
 import TopSectionTitle from '@/components/shared/TopSectionTitle';
 import TechStackBadge from '@/components/shared/TechStackBadge';
 
+const TOP_PAGE_TECH_STACK_IDS = [
+  'html',
+  'css',
+  'sass',
+  'bem',
+  'javascript',
+  'typescript',
+  'react',
+  'nextjs',
+  'tailwindcss',
+  'css-modules',
+  'eslint',
+  'prettier',
+  'husky',
+  'jest',
+  'vitest',
+  'testing-library',
+  'git',
+  'github',
+  'github-actions',
+  'firebase-hosting',
+  'vercel',
+];
+
 export default function About() {
+  const topPageStacks = TECH_STACKS.filter((stack) => TOP_PAGE_TECH_STACK_IDS.includes(stack.id));
+
   return (
     <section id='about' className='px-4 pb-16 sm:px-8 sm:pb-28'>
       <div className='mx-auto w-full max-w-94 sm:max-w-5xl'>
@@ -38,7 +64,7 @@ export default function About() {
               <div className='bg-accent h-0.5 w-8' />
             </div>
             <div className='flex flex-wrap gap-2 sm:gap-2.5'>
-              {TECH_STACKS.map((techStack) => (
+              {topPageStacks.map((techStack) => (
                 <TechStackBadge
                   key={techStack.id}
                   name={techStack.name}

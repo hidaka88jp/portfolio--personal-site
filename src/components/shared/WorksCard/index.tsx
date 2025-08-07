@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { getTechStack } from '@/lib/getTechStack';
+import TechStackLabel from '@/components/shared/TechStackLabel';
 import type { MicroCMSImage } from 'microcms-js-sdk';
 
 type TechStack = {
@@ -28,20 +28,7 @@ export default function WorksCard({ id, title, thumbnail, category, techStacks }
             width={thumbnail.width}
             className='aspect-square w-full object-cover object-top pr-2'
           />
-          <div className='flex items-center gap-1 py-2'>
-            {techStacks.map((stackItem) => {
-              const stack = getTechStack(stackItem.id);
-              return (
-                <div
-                  key={stackItem.id}
-                  className='w-fit rounded-md px-2 py-0.5 text-sm text-white'
-                  style={{ backgroundColor: stack?.color ?? '#666' }}
-                >
-                  {stackItem.name}
-                </div>
-              );
-            })}
-          </div>
+          <TechStackLabel techStacks={techStacks} />
         </div>
         <p className='font-inconsolata absolute top-0 right-0 origin-top-left translate-x-full rotate-90 font-light text-gray-400'>
           {category}

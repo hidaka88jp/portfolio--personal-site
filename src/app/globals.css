@@ -341,11 +341,11 @@
 
   /* Challenge List */
   .article .challenge-list__items {
-    @apply mb-6 pl-8;
+    @apply mb-6 pl-8 border-gray-300 border-b pb-2;
   }
 
   .article .challenge-list__item {
-    @apply relative mb-2;
+    @apply relative mb-1 sm:mb-2;
   }
 
   .article .challenge-list__item::before {

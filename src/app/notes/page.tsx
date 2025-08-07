@@ -4,6 +4,11 @@ import { Suspense } from 'react';
 import TechStackList from '@/components/notes/TechStackList';
 import { TechStackProvider } from '../../context/TechStackContext';
 import NotesList from '@/components/notes/NotesList';
+import LinkButton from '@/components/shared/LinkButton';
+
+export const metadata = {
+  title: 'Notes',
+};
 
 export default async function NotesPage() {
   const techStacks = await getTechStacks();
@@ -25,7 +30,7 @@ export default async function NotesPage() {
           <div className='h-full px-4 sm:px-8'>
             <div className='mx-auto h-full w-full max-w-94 sm:max-w-5xl'>
               <div className='flex h-full flex-col items-center gap-2.5 sm:items-start sm:justify-center'>
-                <h1 className='font-inconsolata text-2xl'>Notes</h1>
+                <h1 className='font-inconsolata text-4xl'>Notes</h1>
                 <p className='font-inconsolata'>What I Learned</p>
                 <div className='bg-accent h-0.5 w-7' />
               </div>
@@ -35,18 +40,25 @@ export default async function NotesPage() {
         <section>
           <div className='px-4 pb-16 sm:px-8 sm:pb-28'>
             <div className='mx-auto w-full max-w-94 sm:max-w-5xl'>
-              <div className='grid grid-cols-1 gap-5 sm:grid-cols-4'>
+              <div className='mb-10 grid grid-cols-1 gap-5 sm:grid-cols-4 md:mb-14'>
                 <div className='sm:order-2 sm:col-span-3'>
                   <Suspense fallback={<p>Loading...</p>}>
                     <NotesList />
                   </Suspense>
                 </div>
-                <div className='pt-16 sm:order-1 sm:col-span-1'>
+                <div className='pt-5 sm:order-1 sm:col-span-1 sm:pt-20'>
                   <div className='sm:hidden'>
-                    <h3 className='border-accent mb-5 border-l-2 pl-2 text-xl'>Category</h3>
+                    <h3 id='category' className='border-accent mb-5 border-l-2 pl-2 text-xl'>
+                      Category
+                    </h3>
                   </div>
                   <TechStackList techStacks={techStacks.contents} />
                 </div>
+              </div>
+              <div className='flex flex-col items-center justify-center'>
+                <LinkButton href={'/#notes'} aria-label='Back to top page Notes section'>
+                  Back to Top
+                </LinkButton>
               </div>
             </div>
           </div>

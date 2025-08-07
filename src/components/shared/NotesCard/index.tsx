@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { getTechStack } from '@/lib/getTechStack';
+import TechStackLabel from '@/components/shared/TechStackLabel';
 import type { MicroCMSImage } from 'microcms-js-sdk';
 
 type TechStack = {
@@ -19,31 +19,18 @@ export default function NotesCard({ title, link, thumbnail, techStacks }: NotesC
   return (
     <Link
       href={`/notes/${link}?from=${encodeURIComponent('/#notes')}`}
-      className='relative w-full cursor-pointer border-r-1 border-b-1 border-gray-400 pb-6 hover:opacity-70'
+      className='relative grid w-full cursor-pointer grid-cols-2 gap-3 border-b-1 border-gray-400 pb-2 hover:opacity-70 sm:block sm:border-r-1 sm:pb-6'
     >
       <Image
         src={thumbnail.url}
         alt={`${title} thumbnail`}
         height={thumbnail.height}
         width={thumbnail.width}
-        className='aspect-3/2 w-full object-cover'
+        className='col-span-1 object-cover sm:aspect-3/2 sm:w-full'
       />
-      <div className='pr-1'>
+      <div className='col-span-1 pr-1'>
         {/* badge */}
-        <div className='flex items-center gap-1 py-2'>
-          {techStacks.map((techStack) => {
-            const stack = getTechStack(techStack.id);
-            return (
-              <div
-                key={techStack.id}
-                className='w-fit rounded-md px-2 py-0.5 text-sm text-white'
-                style={{ backgroundColor: stack?.color ?? '#666' }}
-              >
-                <p>{techStack.name}</p>
-              </div>
-            );
-          })}
-        </div>
+        <TechStackLabel techStacks={techStacks} className='pt-0 sm:pt-2' />
         {/* title */}
         <h3>{title}</h3>
       </div>

@@ -10,7 +10,7 @@ export default function TechStackBadge({ name, Icon, color }: Props) {
       className='flex w-fit items-center gap-1 rounded-md border px-2 py-1 text-white'
       style={{ backgroundColor: color, borderColor: color }}
     >
-      {Icon && <Icon className='h-5 w-5' />}
+      {Icon && <Icon className='h-4 w-4' />}
       <p>{name}</p>
     </div>
   );

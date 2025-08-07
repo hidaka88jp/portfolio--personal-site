@@ -9,6 +9,8 @@ import { getTechStack } from '@/lib/getTechStack';
 import clsx from 'clsx';
 import type { TechStack } from '@/constants/techStacks';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import { FaArrowDownShortWide } from 'react-icons/fa6';
+import TechStackLabel from '@/components/shared/TechStackLabel';
 
 type Note = {
   id: string;
@@ -72,7 +74,7 @@ export default function NotesList() {
   return (
     <section>
       {/* Selected Tech Stack */}
-      <div className='mb-8'>
+      <div className='mb-8 flex items-end justify-between sm:block'>
         <div
           className={clsx(
             'flex w-fit items-center gap-2 rounded-md border px-2 py-1',
@@ -83,6 +85,14 @@ export default function NotesList() {
           {Icon && !isAll && <Icon className='h-5 w-5 sm:h-6 sm:w-6' />}
           <p className='text-xl sm:text-2xl'>{isAll ? 'ALL' : teckStack?.name}</p>
         </div>
+        <Link
+          href='#category'
+          className='text-gray flex items-center gap-0.5 border-b-1 sm:hidden'
+          aria-label='Jump to category filter'
+        >
+          <FaArrowDownShortWide className='h-4 w-4' />
+          <p>Category</p>
+        </Link>
       </div>
 
       {/* Notes List */}
@@ -94,36 +104,23 @@ export default function NotesList() {
         <ul className='space-y-9 sm:space-y-10'>
           {notes.map((note) => (
             <li
-              className='w-full cursor-pointer border-r-1 border-b-1 border-gray-400 pb-6 hover:opacity-70 sm:border-r-0 sm:pb-2'
+              className='w-full cursor-pointer border-b-1 border-gray-400 pb-2 hover:opacity-70 sm:border-r-0 sm:pb-4'
               key={note.id}
             >
               <Link
                 href={`/notes/${note.id}?from=${encodeURIComponent(`/notes?techStack=${selected}&page=${page}`)}`}
-                className='block sm:grid sm:grid-cols-3 sm:gap-7'
+                className='grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-7'
               >
                 <Image
                   src={note.thumbnail.url}
                   alt={`${note.title} thumbnail`}
                   height={note.thumbnail.height}
                   width={note.thumbnail.width}
-                  className='aspect-3/2 w-full object-cover sm:col-span-1'
+                  className='col-span-1 aspect-3/2 w-full object-cover sm:col-span-1'
                 />
-                <div className='sm:col-span-2'>
-                  <div className='flex items-center gap-1 py-2 pr-1'>
-                    {note.techStack.map((stackItem) => {
-                      const stack = getTechStack(stackItem.id);
-                      return (
-                        <div
-                          key={stackItem.id}
-                          className='w-fit rounded-md px-2 py-0.5 text-sm text-white'
-                          style={{ backgroundColor: stack?.color ?? '#666' }}
-                        >
-                          <p>{stackItem.name}</p>
-                        </div>
-                      );
-                    })}
-                  </div>
-                  {note.title}
+                <div className='col-span-1 sm:col-span-2'>
+                  <TechStackLabel techStacks={note.techStack} className='pt-0 sm:pt-2' />
+                  <h3>{note.title}</h3>
                 </div>
               </Link>
             </li>
@@ -131,7 +128,7 @@ export default function NotesList() {
         </ul>
       )}
 
-      {/* ページネーション */}
+      {/* Pagination */}
       {totalPages > 1 && (
         <nav className='border-gray mx-auto mt-6 flex w-fit items-center gap-5 rounded-md border px-4 py-1'>
           <button
