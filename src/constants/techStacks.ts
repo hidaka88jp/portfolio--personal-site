@@ -9,6 +9,7 @@ import {
   SiNextdotjs,
   SiTailwindcss,
   SiCssmodules,
+  SiNodedotjs,
   SiEslint,
   SiPrettier,
   SiJest,
@@ -88,6 +89,12 @@ export const TECH_STACKS: TechStack[] = [
     name: 'CSS Modules',
     Icon: SiCssmodules,
     color: '#383434',
+  },
+  {
+    id: 'nodejs',
+    name: 'Node.js',
+    Icon: SiNodedotjs,
+    color: '#5FA04E',
   },
   {
     id: 'eslint',
