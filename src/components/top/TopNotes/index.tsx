@@ -14,7 +14,7 @@ export default async function TopNotes() {
       <section id='notes' className='px-4 pb-24 sm:px-8 sm:pb-28'>
         <div className='mx-auto w-full max-w-94 sm:max-w-5xl'>
           <TopSectionTitle title='Notes' subTitle="What I've learned" />
-          <div className='grid grid-cols-1 gap-9 pb-10 xl:grid-cols-3 xl:gap-8'>
+          <div className='grid grid-cols-1 gap-9 pb-10 lg:grid-cols-2 lg:gap-8 xl:grid-cols-3'>
             {notes.contents.map((note) => (
               <NotesCard
                 key={note.id}
