@@ -20,7 +20,7 @@ export default function TechStackList({ techStacks }: Props) {
   }
 
   return (
-    <ul className='flex flex-wrap gap-3 sm:flex-col'>
+    <ul className='flex flex-wrap gap-3 lg:flex-col'>
       <li
         className='border-gray flex w-fit cursor-pointer items-center rounded-md border px-2 py-1'
         onClick={() => handleCategoryChange('')}

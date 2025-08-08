@@ -22,8 +22,8 @@ export default function Header() {
             IDIKA
           </h1>
         </Link>
-        <MobileNavigation className='z-20 sm:hidden' />
-        <DesktopNavigation className='hidden sm:flex' />
+        <MobileNavigation className='z-20 lg:hidden' />
+        <DesktopNavigation className='hidden lg:flex' />
       </div>
     </header>
   );

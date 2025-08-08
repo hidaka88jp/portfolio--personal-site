@@ -74,7 +74,7 @@ export default function NotesList() {
   return (
     <section>
       {/* Selected Tech Stack */}
-      <div className='mb-8 flex items-end justify-between sm:block'>
+      <div className='mb-8 flex items-end justify-between lg:block'>
         <div
           className={clsx(
             'flex w-fit items-center gap-2 rounded-md border px-2 py-1',
@@ -87,7 +87,7 @@ export default function NotesList() {
         </div>
         <Link
           href='#category'
-          className='text-gray flex items-center gap-0.5 border-b-1 sm:hidden'
+          className='text-gray flex items-center gap-0.5 border-b-1 lg:hidden'
           aria-label='Jump to category filter'
         >
           <FaArrowDownShortWide className='h-4 w-4' />
