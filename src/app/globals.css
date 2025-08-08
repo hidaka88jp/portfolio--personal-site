@@ -19,6 +19,30 @@
   }
 
   /* Frontend */
+  .article .tech-stack-badge--html {
+    background-color: #E34F26;
+  }
+
+  .article .tech-stack-badge--css {
+    background-color: #663399;
+  }
+
+  .article .tech-stack-badge--sass {
+    background-color: #CC6699;
+  }
+
+  .article .tech-stack-badge--bem {
+    background-color: #383434;
+  }
+
+  .article .tech-stack-badge--javascript {
+    background-color: #FFC31F;
+  }
+
+  .article .tech-stack-badge--typescript {
+    background-color: #3178c6;
+  }
+
   .article .tech-stack-badge--react {
     background-color: #5ed2f3;
   }
@@ -27,11 +51,83 @@
     background-color: #e43639;
   }
 
-  .article .tech-stack-badge--typescript {
-    background-color: #3178c6;
+  .article .tech-stack-badge--vite {
+    background-color: #646CFF;
+  }
+
+  .article .tech-stack-badge--nextjs {
+    background-color: #383434;
+  }
+
+  .article .tech-stack-badge--tailwindcss {
+    background-color: #06B6D4;
+  }
+
+  .article .tech-stack-badge--css-modules {
+    background-color: #383434;
+  }
+
+
+  /* Backend */
+  .article .tech-stack-badge--nodejs {
+    background-color: #5FA04E;
+  }
+
+  .article .tech-stack-badge--microcms {
+    background-color: #2A2B2E;
+  }
+
+  .article .tech-stack-badge--wordpress {
+    background-color: #21759B;
+  }
+
+  .article .tech-stack-badge--php {
+    background-color: #777BB4;
+  }
+
+  /* Code Quality */
+  .article .tech-stack-badge--eslint {
+    background-color: #6B57C9;
+  }
+
+  .article .tech-stack-badge--prettier {
+    background-color: #F7B93E;
+  }
+
+  .article .tech-stack-badge--husky {
+    background-color: #383434;
+  }
+
+  /* Testing */
+  .article .tech-stack-badge--jest {
+    background-color: #C21325;
+  }
+
+  .article .tech-stack-badge--vitest {
+    background-color: #6E9F18;
+  }
+
+  .article .tech-stack-badge--testing-library {
+    background-color: #E33332;
   }
 
   /* Deployment */
+  .article .tech-stack-badge--linux {
+    background-color: #F6AB05;
+  }
+
+  .article .tech-stack-badge--docker {
+    background-color: #2496ED;
+  }
+
+  .article .tech-stack-badge--git {
+    background-color: #F05032;
+  }
+
+  .article .tech-stack-badge--github {
+    background-color: #383434;
+  }
+
   .article .tech-stack-badge--github-actions {
     background-color: #2088ff;
   }
@@ -40,7 +136,39 @@
     background-color: #dd2c00;
   }
 
-  /* Dev Tools */
+  .article .tech-stack-badge--vercel {
+    background-color: #383434;
+  }
+
+  .article .tech-stack-badge--github-pages {
+    background-color: #222222;
+  }
+
+  .article .tech-stack-badge--aws {
+    background-color: #F69400;
+  }
+
+  /* Tools */
+
+  .article .tech-stack-badge--vscode {
+    background-color: #2096E8;
+  }
+
+  .article .tech-stack-badge--cursor {
+    background-color: #383434;
+  }
+
+  .article .tech-stack-badge--figma {
+    background-color: #F24E1E;
+  }
+
+  .article .tech-stack-badge--affinity-designer {
+    background-color: #134881;
+  }
+
+  .article .tech-stack-badge--affinity-photo {
+    background-color: #4E3188;
+  }
 
   /* work-hero section */
   .article .work-hero {
