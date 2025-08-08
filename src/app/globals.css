@@ -359,7 +359,7 @@
   }
 
   .article .tech-stack-table__header {
-    @apply border-accent border-b-3 px-4 py-2 font-medium md:px-10 md:py-5;
+    @apply border-accent border-b-3 px-4 py-2 font-medium md:px-10 md:py-5 sm:text-nowrap;
   }
 
   .article .tech-stack-table__data {
