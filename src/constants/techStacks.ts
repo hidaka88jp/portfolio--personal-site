@@ -9,17 +9,29 @@ import {
   SiNextdotjs,
   SiTailwindcss,
   SiCssmodules,
+  SiNodedotjs,
+  SiPhp,
+  SiWordpress,
   SiEslint,
   SiPrettier,
   SiJest,
   SiVitest,
   SiTestinglibrary,
+  SiLinux,
+  SiDocker,
   SiGit,
   SiGithub,
   SiGithubactions,
   SiFirebase,
   SiVercel,
+  SiGithubpages,
+  SiFigma,
+  SiAffinitydesigner,
+  SiAffinityphoto,
 } from 'react-icons/si';
+
+import { VscVscode } from 'react-icons/vsc';
+import { FaAws } from 'react-icons/fa';
 
 export type TechStack = {
   id: string;
@@ -90,6 +102,29 @@ export const TECH_STACKS: TechStack[] = [
     color: '#383434',
   },
   {
+    id: 'nodejs',
+    name: 'Node.js',
+    Icon: SiNodedotjs,
+    color: '#5FA04E',
+  },
+  {
+    id: 'php',
+    name: 'PHP',
+    Icon: SiPhp,
+    color: '#777BB4',
+  },
+  {
+    id: 'wordpress',
+    name: 'WordPress',
+    Icon: SiWordpress,
+    color: '#21759B',
+  },
+  {
+    id: 'microcms',
+    name: 'microCMS',
+    color: '#2A2B2E',
+  },
+  {
     id: 'eslint',
     name: 'ESLint',
     Icon: SiEslint,
@@ -125,6 +160,18 @@ export const TECH_STACKS: TechStack[] = [
     color: '#E33332',
   },
   {
+    id: 'linux',
+    name: 'Linux',
+    Icon: SiLinux,
+    color: '#F6AB05',
+  },
+  {
+    id: 'docker',
+    name: 'Docker',
+    Icon: SiDocker,
+    color: '#2496ED',
+  },
+  {
     id: 'git',
     name: 'Git',
     Icon: SiGit,
@@ -153,5 +200,46 @@ export const TECH_STACKS: TechStack[] = [
     name: 'Vercel',
     Icon: SiVercel,
     color: '#383434',
+  },
+  {
+    id: 'github-pages',
+    name: 'GitHub Pages',
+    Icon: SiGithubpages,
+    color: '#222222',
+  },
+  {
+    id: 'aws',
+    name: 'AWS',
+    Icon: FaAws,
+    color: '#F69400',
+  },
+  {
+    id: 'vscode',
+    name: 'VS Code',
+    Icon: VscVscode,
+    color: '#2096E8',
+  },
+  {
+    id: 'cursor',
+    name: 'Cursor',
+    color: '#383434',
+  },
+  {
+    id: 'figma',
+    name: 'Figma',
+    Icon: SiFigma,
+    color: '#F24E1E',
+  },
+  {
+    id: 'affinity-designer',
+    name: 'Affinity Designer',
+    Icon: SiAffinitydesigner,
+    color: '#134881',
+  },
+  {
+    id: 'affinity-photo',
+    name: 'Affinity Photo',
+    Icon: SiAffinityphoto,
+    color: '#4E3188',
   },
 ];
