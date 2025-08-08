@@ -13,7 +13,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": ["jest"], // ✅ 追加
+    "types": ["jest"], // ✅ Add jest types
     "plugins": [
       {
         "name": "next"
