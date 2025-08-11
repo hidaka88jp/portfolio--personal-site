@@ -330,7 +330,7 @@
 
   /* dot-list */
   .article .dot-list {
-    @apply my-1 list-disc pl-4 marker:text-gray;
+    @apply my-1 list-disc pl-4 marker:text-gray list-inside;
   }
 
   .article .dot-list__item {
