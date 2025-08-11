@@ -20,7 +20,7 @@
 
   /* Frontend */
   .article .tech-stack-badge--html {
-    background-color: #E34F26;
+    background-color: #e34f26;
   }
 
   .article .tech-stack-badge--css {
@@ -28,7 +28,7 @@
   }
 
   .article .tech-stack-badge--sass {
-    background-color: #CC6699;
+    background-color: #cc6699;
   }
 
   .article .tech-stack-badge--bem {
@@ -36,7 +36,7 @@
   }
 
   .article .tech-stack-badge--javascript {
-    background-color: #FFC31F;
+    background-color: #ffc31f;
   }
 
   .article .tech-stack-badge--typescript {
@@ -52,7 +52,7 @@
   }
 
   .article .tech-stack-badge--vite {
-    background-color: #646CFF;
+    background-color: #646cff;
   }
 
   .article .tech-stack-badge--nextjs {
@@ -60,38 +60,37 @@
   }
 
   .article .tech-stack-badge--tailwindcss {
-    background-color: #06B6D4;
+    background-color: #06b6d4;
   }
 
   .article .tech-stack-badge--css-modules {
     background-color: #383434;
   }
 
-
   /* Backend */
   .article .tech-stack-badge--nodejs {
-    background-color: #5FA04E;
+    background-color: #5fa04e;
   }
 
   .article .tech-stack-badge--microcms {
-    background-color: #2A2B2E;
+    background-color: #2a2b2e;
   }
 
   .article .tech-stack-badge--wordpress {
-    background-color: #21759B;
+    background-color: #21759b;
   }
 
   .article .tech-stack-badge--php {
-    background-color: #777BB4;
+    background-color: #777bb4;
   }
 
   /* Code Quality */
   .article .tech-stack-badge--eslint {
-    background-color: #6B57C9;
+    background-color: #6b57c9;
   }
 
   .article .tech-stack-badge--prettier {
-    background-color: #F7B93E;
+    background-color: #f7b93e;
   }
 
   .article .tech-stack-badge--husky {
@@ -100,28 +99,28 @@
 
   /* Testing */
   .article .tech-stack-badge--jest {
-    background-color: #C21325;
+    background-color: #c21325;
   }
 
   .article .tech-stack-badge--vitest {
-    background-color: #6E9F18;
+    background-color: #6e9f18;
   }
 
   .article .tech-stack-badge--testing-library {
-    background-color: #E33332;
+    background-color: #e33332;
   }
 
   /* Deployment */
   .article .tech-stack-badge--linux {
-    background-color: #F6AB05;
+    background-color: #f6ab05;
   }
 
   .article .tech-stack-badge--docker {
-    background-color: #2496ED;
+    background-color: #2496ed;
   }
 
   .article .tech-stack-badge--git {
-    background-color: #F05032;
+    background-color: #f05032;
   }
 
   .article .tech-stack-badge--github {
@@ -145,13 +144,13 @@
   }
 
   .article .tech-stack-badge--aws {
-    background-color: #F69400;
+    background-color: #f69400;
   }
 
   /* Tools */
 
   .article .tech-stack-badge--vscode {
-    background-color: #2096E8;
+    background-color: #2096e8;
   }
 
   .article .tech-stack-badge--cursor {
@@ -159,7 +158,7 @@
   }
 
   .article .tech-stack-badge--figma {
-    background-color: #F24E1E;
+    background-color: #f24e1e;
   }
 
   .article .tech-stack-badge--affinity-designer {
@@ -167,7 +166,7 @@
   }
 
   .article .tech-stack-badge--affinity-photo {
-    background-color: #4E3188;
+    background-color: #4e3188;
   }
 
   /* work-hero section */
@@ -329,6 +328,15 @@
     transform: rotate(-45deg);
   }
 
+  /* dot-list */
+  .article .dot-list {
+    @apply my-1 list-disc pl-4 marker:text-gray;
+  }
+
+  .article .dot-list__item {
+    @apply mb-2 sm:mb-1;
+  }
+
   /* link */
   .article .link {
     @apply hover:text-accent underline;
@@ -359,7 +367,7 @@
   }
 
   .article .tech-stack-table__header {
-    @apply border-accent border-b-3 px-4 py-2 font-medium md:px-10 md:py-5 sm:text-nowrap;
+    @apply border-accent border-b-3 px-4 py-2 font-medium sm:text-nowrap md:px-10 md:py-5;
   }
 
   .article .tech-stack-table__data {
@@ -469,7 +477,7 @@
 
   /* Challenge List */
   .article .challenge-list__items {
-    @apply mb-6 pl-8 border-gray-300 border-b pb-2;
+    @apply mb-6 border-b border-gray-300 pb-2 pl-8;
   }
 
   .article .challenge-list__item {
