@@ -282,7 +282,7 @@
   }
 
   .article .sub-title {
-    @apply font-inconsolata relative mb-4 text-xl border-b-2 border-gray-300 pl-0.5;
+    @apply font-inconsolata relative mb-4 border-b-2 border-gray-300 pl-0.5 text-xl;
   }
 
   /* checklist */
@@ -320,7 +320,7 @@
 
   /* dot-list */
   .article .dot-list {
-    @apply my-1 list-disc pl-5 marker:text-gray;
+    @apply marker:text-gray my-1 list-disc pl-5;
   }
 
   .article .dot-list__item {
@@ -445,24 +445,29 @@
     @apply order-2 md:order-1;
   }
 
+  /* Notes List */
   .article .NotesList {
-    @apply grid grid-cols-1 gap-9 sm:grid-cols-2 xl:grid-cols-3 xl:gap-8;
+    @apply grid grid-cols-1 gap-9 pb-10 lg:grid-cols-3 lg:gap-8;
   }
 
   .article .NotesList__item {
-    @apply w-full cursor-pointer border-r-1 border-b-1 border-gray-400 pb-6 hover:opacity-70;
+    @apply relative grid w-full cursor-pointer grid-cols-2 gap-3 border-b-1 border-gray-400 pb-2 hover:opacity-70 lg:block lg:border-r-1 lg:pb-6;
   }
 
   .article .NotesList__item-thumbnail {
-    @apply aspect-3/2 w-full object-cover;
+    @apply col-span-1 object-cover lg:aspect-3/2 lg:w-full;
   }
 
   .article .NotesList__item-content {
-    @apply pr-1;
+    @apply col-span-1 pr-1;
   }
 
   .article .NotesList__item-category {
-    @apply flex items-center gap-1 py-2;
+    @apply flex flex-wrap items-center gap-1 pt-0 pr-1 pb-2 lg:pt-2;
+  }
+
+  .article .NotesList__badge {
+    @apply py-0.5 text-sm;
   }
 
   /* Challenge List */
@@ -516,12 +521,12 @@
 
   /* code */
   .article .code-inline {
-    @apply bg-gray-100 text-red-400 font-inconsolata text-sm px-1 py-0.5 rounded font-medium;
+    @apply font-inconsolata rounded bg-gray-100 px-1 py-0.5 text-sm font-medium text-red-400;
   }
 
   /* code block */
   .article .code-block {
-    @apply bg-gray-800 text-gray-100 px-4 py-1 rounded-lg overflow-x-auto text-sm my-2;
+    @apply my-2 overflow-x-auto rounded-lg bg-gray-800 px-4 py-1 text-sm text-gray-100;
   }
 
   /* Hepler class */
@@ -532,5 +537,4 @@
   .article .margin-b-10 {
     @apply mb-10;
   }
-  
 }
