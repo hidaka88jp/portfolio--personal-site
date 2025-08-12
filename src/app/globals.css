@@ -285,16 +285,6 @@
     @apply font-inconsolata relative mb-4 text-xl border-b-2 border-gray-300 pl-0.5;
   }
 
-  /* .article .sub-title::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 30px;
-    height: 3px;
-    background-color: var(--color-accent);
-  } */
-
   /* checklist */
   .article .checklist {
     padding-left: 2rem;
