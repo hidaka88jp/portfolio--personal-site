@@ -61,7 +61,7 @@ export default async function NoteDetailPage({ params, searchParams }: NoteDetai
         <article className='px-4 pb-16 sm:px-8 sm:pb-28'>
           <div className='mx-auto w-full max-w-94 sm:max-w-2xl'>
             <div className='mb-2 flex items-center gap-3.5'>
-              <div className='text-gray flex items-center gap-1'>
+              <div className='text-gray flex shrink-0 items-center gap-1'>
                 <FaRegClock size={18} />
                 <p>{formatDate(note.publishedAt ?? note.createdAt)}</p>
               </div>
