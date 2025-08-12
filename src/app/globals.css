@@ -282,10 +282,10 @@
   }
 
   .article .sub-title {
-    @apply font-inconsolata relative mb-4 pb-1.5 text-xl;
+    @apply font-inconsolata relative mb-4 text-xl border-b-2 border-gray-300 pl-0.5;
   }
 
-  .article .sub-title::after {
+  /* .article .sub-title::after {
     content: '';
     position: absolute;
     left: 0;
@@ -293,7 +293,7 @@
     width: 30px;
     height: 3px;
     background-color: var(--color-accent);
-  }
+  } */
 
   /* checklist */
   .article .checklist {
