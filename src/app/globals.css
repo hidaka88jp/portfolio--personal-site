@@ -282,17 +282,7 @@
   }
 
   .article .sub-title {
-    @apply font-inconsolata relative mb-4 pb-1.5 text-xl;
-  }
-
-  .article .sub-title::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 30px;
-    height: 3px;
-    background-color: var(--color-accent);
+    @apply font-inconsolata relative mb-4 text-xl border-b-2 border-gray-300 pl-0.5;
   }
 
   /* checklist */
@@ -532,5 +522,9 @@
   /* Hepler class */
   .article .margin-b-5 {
     @apply mb-5;
+  }
+
+  .article .margin-b-10 {
+    @apply mb-10;
   }
 }
