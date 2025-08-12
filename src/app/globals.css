@@ -533,4 +533,8 @@
   .article .margin-b-5 {
     @apply mb-5;
   }
+
+  .article .margin-b-10 {
+    @apply mb-10;
+  }
 }
