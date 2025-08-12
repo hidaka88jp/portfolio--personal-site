@@ -524,6 +524,11 @@
     height: 1rem;
   }
 
+  /* code */
+  .article .code-inline {
+    @apply bg-gray-100 text-red-500 font-inconsolata text-sm px-1 py-0.5 rounded font-medium;
+  }
+
   /* Hepler class */
   .article .margin-b-5 {
     @apply mb-5;
