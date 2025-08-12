@@ -519,6 +519,11 @@
     @apply bg-gray-100 text-red-400 font-inconsolata text-sm px-1 py-0.5 rounded font-medium;
   }
 
+  /* code block */
+  .article .code-block {
+    @apply bg-gray-800 text-gray-100 px-4 py-1 rounded-lg overflow-x-auto text-sm my-2;
+  }
+
   /* Hepler class */
   .article .margin-b-5 {
     @apply mb-5;
@@ -527,4 +532,5 @@
   .article .margin-b-10 {
     @apply mb-10;
   }
+  
 }
