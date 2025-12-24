@@ -16,6 +16,7 @@
   /* Tech Stack Badge */
   .article .tech-stack-badge {
     @apply w-fit shrink-0 rounded-md px-2 py-1 text-white;
+    background-color: #3f3f46;
   }
 
   /* Frontend */
@@ -84,6 +85,31 @@
     background-color: #777bb4;
   }
 
+  .article .tech-stack-badge--express {
+    background-color: #383434;
+  }
+
+  .article .tech-stack-badge--prisma {
+    background-color: #2D3748;
+  }
+
+  /* Database */
+  .article .tech-stack-badge--mysql {
+    background-color: #4479A1;
+  }
+
+  .article .tech-stack-badge--postgresql {
+    background-color: #4169E1;
+  }
+
+  .article .tech-stack-badge--sqlite {
+    background-color: #003B57;
+  }
+
+  .article .tech-stack-badge--mongodb {
+    background-color: #47a248;
+  }
+
   /* Code Quality */
   .article .tech-stack-badge--eslint {
     background-color: #6b57c9;
@@ -145,6 +171,14 @@
 
   .article .tech-stack-badge--aws {
     background-color: #f69400;
+  }
+
+  .article .tech-stack-badge--nginx {
+    background-color: #009639;
+  }
+
+  .article .tech-stack-badge--certbot {
+    background-color: #383434;
   }
 
   /* Tools */
