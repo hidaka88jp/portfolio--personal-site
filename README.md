@@ -4,7 +4,7 @@
   <img src="./.github/assets/screenshot-desktop.webp" width="74%" alt="desktop">
   <img src="./.github/assets/screenshot-mobile.webp" width="22.3%" alt="moblie">
   <br><br>
-  <a href="https://takanori-hidaka.vercel.app/" target="_blank">
+  <a href="https://takanorihidaka.com/" target="_blank">
     <img src="https://img.shields.io/badge/VIEW_DEMO-69AB5D.svg?style=for-the-badge&logo=vercel&logoColor=white" alt="View Demo" />
   </a>
   <br><br>
